@@ -1,0 +1,171 @@
+{
+  "basics": {
+    "name": "Mario Daniel Ruiz Saavedra",
+    "label": "Developer",
+    "picture": "",
+    "email": "desiderantes93@gmail.com",
+    "phone": "(310) 626 1218",
+    "website": "https://desiderantesblog.wordpress.com",
+    "summary": "Mario is a Colombian Developer with a love for Free Software, Free Culture, and all things GNU. Mostly a Java dev, but no fear against C#, C++ or Javascript. Vala user.",
+    "location": {
+      "address": "Calle 11 # 25 - 45 Apto 201 Urbanización La Playa",
+      "postalCode": "081007",
+      "city": "Barranquilla",
+      "countryCode": "Colombia",
+      "region": "Atlántico"
+    },
+    "profiles": [
+      {
+        "network": "Twitter",
+        "username": "desiderantes",
+        "url": "https://twitter.com/desiderantes"
+      },
+      {
+        "network": "GitHub",
+        "username": "desiderantes",
+        "url": "https://github.com/desiderantes"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Accendo S.A.S",
+      "position": "Junior Java Dev",
+      "website": "https://www.accendo.com.co/",
+      "startDate": "2015-07-01",
+      "endDate": "2016-09-28",
+      "summary": "Accendo is a software development workshop with a focus on RFID and product tracking.",
+      "highlights": [
+        "Built TerraInnova: An e-commerce and contact portal, specialized in agricultural commodities and keeping producers and consumers in touch. The development included a backend written in Java, using Spring MVC, jOOQ, PostgreSQL, and a frontend with Thymeleaf, Bootstrap and jQuery. The portal runs on CentOS 7, with AWS for the user data layer.",
+        "Collaborated building WColombia: A web tool for inventory management and income/expense tracking of slot machines, taking into account taxes and goverment regulations. I worked  on the backend side, with Java 8,  Spring Framework MVC, JPA, Hibernate, jOOQ and PostgreSQL.",
+        "Collaborated building Crisálida. Crisálida is a government program to educate about  sexual relationships, coexistence and child’s rights. Our portal managed surveys, student inscriptions, situational alarms, and report bulding (as a .xls file). The \t\tbackend uses Spring Data, Spring MVC, Spring Boot, jOOQ, and PostgreSQL. Frontend-wise, it uses Javascript (JSX) with React, Redux in the data layer, and a Bootstrap 3 based design.",
+        "Sushi2Home : Built a employee-facing frontend with C# and WPF, to handle incoming orders, automatic receipt printing, and delivery assignment; and collaborated in the consumer-facing portal, where I helped with the auto-combo generation. Sushi2Home is a sushi delivery service, available vía social media and its own website. It consists of a server in Ruby-on-Rails, with PostgreSQL and a customized instance of an e-comerce platform, Shoppe. ",
+        "Trackvy is a RFID-based stock management system. I worked on a port of the C# Windows CE Reader client to a new API version; a new readings portal for tool lending in C#, Windows Forms, and SQLite; a new version of the tagging and movement desktop tool in Java 8, JavaFX, H2, and Spring Context; and a port of the frontend from Angular 1 + Typescript+ D3.js to HTML5, jQuery, Chartist.js, Bootstrap and Thymeleaf."
+      ]
+    },
+    {
+      "company": "Nativapps S.A.S",
+      "position": "Developer",
+      "website": "http://www.nativapps.com/",
+      "startDate": "2017-02-21",
+      "endDate": "2017-10-31",
+      "summary": "Nativapps is a nearshore IT partner and development shop with a focus on educational projects",
+      "highlights": [
+        "Built the backend for OpenMDM. OpenMDM is a mobile device management platform. It can track a device’s location, battery info, and connection status. It also includes a remote management module vía web browser, and a command execution system. The backend was built with Java 8, Spring Framework, jOOQ, ActiveMQ, and Swagger for the API documentation",
+        "Analítico  is a reporting tool created to help people on the medical industry on the United States to visualize the data related to providers, patients and claims in a readable and interactive presentation. I'm currently involved with the Data importing and DB modelling in MongoDB."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Colegio Gimnasio Bolivariano",
+      "area": "Natural Sciences",
+      "studyType": "High School",
+      "startDate": "1999-02-16",
+      "endDate": "2009-11-15",
+      "courses": []
+    },
+    {
+      "institution": "Universidad del Norte",
+      "area": "Systems and Computing Engineering",
+      "studyType": "University",
+      "startDate": "2012-06-30",
+      "endDate": "2015-05-20",
+      "comments" : "On Hold",
+      "courses": []
+    }
+  ],
+  "awards": [
+    {
+      "title": "Mejores en Educación 2009",
+      "date": "2009-12-09",
+      "awarder": "Ministerio de Educación",
+      "summary": "Best ICFES Test results for Magdalena"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Web Development",
+      "level": "Good",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "Javascript",
+        "Thymeleaf",
+        "Bootstrap",
+        "jQuery"
+      ]
+    },
+    {
+      "name": "Development Tools",
+      "level": "Pretty Good",
+      "keywords": [
+        "Git",
+        "Vagrant",
+        "Docker",
+        "GNU/Linux",
+        "Shell"
+      ]
+    },
+    {
+      "name": "Backend Development",
+      "level": "Pretty Good",
+      "keywords": [
+        "Java 8",
+        "Kotlin",
+        "PostgreSQL",
+        "MySQL",
+        "Spring Framework",
+        "jOOQ"
+      ]
+    },
+    {
+      "name": "Desktop Development",
+      "level": "Pretty Good",
+      "keywords": [
+        "Vala",
+        "GTK+",
+        "C#",
+        "WPF"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "80%"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "Native Speaker"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Free Software",
+      "keywords": [
+        "GNU",
+        "Hurd",
+        "GNOME"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Carmen Nidia Saavedra Ruz",
+      "reference": "Family - Lawyer - 3103631187"
+    },
+    {
+      "name": "Rubén Darío Ruiz Becerra",
+      "reference": "Family - Mechanical Engineer - 3103574030"
+    },
+    {
+      "name": "Carlos Arbey Bolaños Duarte",
+      "reference": "Electronical Engineer - 3005307422"
+    },
+    {
+      "name": "Stefanny Espinosa",
+      "reference": "Electronic Engineer -  3145951482"
+    }
+  ]
+}
