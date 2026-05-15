@@ -1,0 +1,435 @@
+personal:
+  name: Mario Daniel Ruiz Saavedra
+  email: desiderantes93@gmail.com
+  phone: "+55 (21) 999040893"
+  url: "https://desiderantes.com"
+  location:
+    city: Rio de Janeiro
+    region: RJ
+    postalCode: 22790-735
+    country: Brazil
+  profiles:
+    - network: LinkedIn
+      username: desiderantes
+      url: "https://linkedin.com/in/desiderantes"
+    - network: GitHub
+      username: desiderantes
+      url: "https://github.com/desiderantes"
+work:
+  - organization: Softensity
+    contract: outsourcing
+    client: Modern Campus
+    position: Lead Backend Developer
+    url: https://softensity.com
+    location:
+      - Rio de Janeiro, Brazil
+    modality:
+      - remote
+    startDate: 2025-09-02
+    endDate: null
+    stack:
+      - name: Java
+        versions: [8, 21, 25]
+        category: Programming
+      - name: Spring Boot
+        versions: [3.x, 4.x]
+        category: Backend
+      - name: Spring Framework
+        versions: [2.5, 7]
+        category: Backend
+      - name: Hibernate
+        versions: [3, 7]
+        category: Backend
+      - name: Gradle
+        category: Tools
+      - name: OpenRewrite
+        category: Tools
+      - name: Ant
+        category: Tools
+      - name: Struts
+        versions: [1.x]
+        category: Backend
+    highlights:
+      - Leading the architectural evolution of a legacy LMS monolith, orchestrating a multi-team transition from Java 5/Struts 1.x to a modular Java 21-25 (LTS) and Spring Boot 3-4 ecosystem.
+      - Engineered custom OpenRewrite and Gradle automation tooling to accelerate large-scale JVM modernization, enabling repeatable refactoring workflows across legacy Ant/Hibernate/Java codebases.
+      - Mentoring senior engineers on modern JVM features and platform engineering best practices to reduce technical debt and improve organizational deployment reliability.
+  - organization: Nexton
+    contract: outsourcing
+    client: IPSY
+    position: Senior Backend Developer
+    url: "https://nextonlabs.com"
+    location:
+      - "Bogotá, Colombia"
+      - "Rio de Janeiro, Brazil"
+    modality:
+      - remote
+    startDate: 2022-04-04
+    endDate: 2025-05-01
+    stack:
+      - name: Java
+        versions: [8, 17, 21]
+        category: Programming
+      - name: Kotlin
+        versions: [1.8]
+        category: Programming
+      - name: Spring Boot
+        versions: [2.x, 3.x]
+        category: Backend
+      - name: PostgreSQL
+        category: Databases
+        versions: [12, 16]
+      - name: Apache Spark
+        category: BI & Data Analytics
+      - name: Databricks
+        category: BI & Data Analytics
+      - name: Testcontainers
+        category: Tools
+      - name: Gradle
+        versions: [4, 8]
+        category: Tools
+      - name: Micrometer
+        category: Backend
+      - name: Redis
+        category: Databases
+        versions: [4, 7]
+    highlights:
+      - Designed and executed a zero-downtime migration strategy for user records during a company merge, utilizing Scala on Databricks/Spark to migrate legacy MySQL data to PostgreSQL.
+      - Led a technical baseline upgrade from Java 8/Spring Boot 2.0 to Java 21/Spring Boot 3.x across core commerce services, integrating Micrometer for enhanced production observability.
+      - Designed and implemented organization-wide Gradle platform conventions, Version Catalogs, and Testcontainers tooling to standardize builds, dependency governance, and local development workflows.
+      - Evolved core commerce systems over a 3-year lifecycle, achieving measurable latency reduction and observability gains through post-launch refactoring.
+  - organization: EPAM Inc.
+    position: Senior Backend Developer
+    url: "https://epam.com"
+    contract: outsourcing
+    client: TrueAccord
+    location:
+      - "Bogotá, Colombia"
+    modality:
+      - remote
+    startDate: 2021-04-01
+    endDate: 2022-04-03
+    stack:
+      - name: Kotlin
+        versions: [1.5, 1.6]
+        category: Programming
+      - name: Java
+        versions: [11]
+        category: Programming
+      - name: Quarkus
+        category: Backend
+      - name: Kafka
+        category: Backend
+      - name: Debezium
+        category: Backend
+      - name: PostgreSQL
+        category: Databases
+        versions: [12]
+      - name: MySQL
+        versions: [5]
+        category: Databases
+      - name: Snowflake
+        category: Databases
+    highlights:
+      - Engineered high-throughput streaming microservices (Kafka/Quarkus) to perform PCI-compliant profile merging and sensitive data scrubbing for 100M+ financial records.
+      - Developed custom Kafka Connect connectors to manage Protobuf/Avro schema evolution in sync with centralized schema repositories, ensuring zero data loss during stream processing.
+      - Led the implementation of an account-linking service that unified disparate debtor records into single consumer profiles, improving payment recovery rates.
+  - organization: S4N S.A.S.
+    contract: outsourcing
+    client: Nordstrom
+    position: Backend Developer
+    url: "https://s4n.co"
+    location:
+      - "Bogotá, Colombia"
+    modality:
+      - remote
+    startDate: 2020-05-15
+    endDate: 2021-04-01
+    stack:
+      - name: Java
+        versions: [11]
+        category: Programming
+      - name: Spring Boot
+        category: Backend
+      - name: Hibernate
+        category: Backend
+        versions: [5.4]
+      - name: PostgreSQL
+        category: Databases
+      - name: GraphQL
+        category: Backend
+      - name: Kafka
+        category: Backend
+      - name: Oracle
+        versions: [11c]
+        category: Databases
+    highlights:
+      - Replatformed the governance subsystem by centralizing data from legacy Oracle 11 silos into a unified Spring Boot source of truth, exposing GraphQL APIs and Kafka streams for real-time event sourcing.
+      - Implemented a high-performance historical data tracking system using Hibernate/Envers, customized to reuse existing legacy audit schemas in PostgreSQL.
+  - organization: Bydrec Inc.
+    contract: outsourcing
+    client: NFL
+    position: Senior Backend Developer
+    url: "https://bydrec.com"
+    location:
+      - "Barranquilla, Colombia"
+    modality:
+      - remote
+    startDate: 2018-08-02
+    endDate: 2020-03-30
+    stack:
+      - name: Java
+        versions: [8]
+        category: Programming
+      - name: Groovy
+        category: Programming
+      - name: Spring Boot
+        category: Backend
+        versions: [2.0, 2.1]
+      - name: Spring Framework
+        category: Backend
+        versions: [5.0]
+      - name: Cassandra
+        category: Databases
+      - name: Apache Camel
+        category: Backend
+    highlights:
+      - Scaled backend video delivery services to support 2M+ concurrent viewers during peak live events, ensuring high availability across a distributed Java/Groovy/Cassandra stack.
+      - Engineered internal automation tools to validate business logic for DMAs, A/V pairing, and CMS integration.
+  - organization: NativApps S.A.S.
+    contract: full-time
+    position: Software Developer
+    url: "https://nativapps.com.co"
+    location:
+      - "Barranquilla, Colombia"
+    modality:
+      - remote
+      - onsite
+    startDate: 2017-02-01
+    endDate: 2018-08-01
+    stack:
+      - name: Java
+        versions: [8]
+        category: Programming
+      - name: Kotlin
+        versions: [1.1, 1.2]
+        category: Programming
+      - name: Spring Boot
+        category: Backend
+        versions: [1.5]
+      - name: Spring Framework
+        category: Backend
+        versions: [4.3]
+      - name: Mirth
+        category: Tools
+      - name: jOOQ
+        category: Backend
+      - name: PostgreSQL
+        category: Databases
+      - name: MongoDB
+        category: Databases
+      - name: SQL Server
+        category: Databases
+      - name: PostGIS
+        category: Databases
+      - name: H3
+        category: Programming
+    highlights:
+      - Engineered HIPAA-compliant medical data migrations (SQL Server to MongoDB) using Mirth and Rhino/JS, ensuring high accuracy in HL7 mapping and deduplication.
+      - Developed geolocation and spatial indexing modules using H3 and PostGIS for a delivery application.
+      - Built a custom VNC layer for Android and a backend MDM (Mobile Device Management) service to track device health and location.
+  - organization: Accendo S.A.S
+    contract: full-time
+    position: Junior Software Developer
+    url: "https://accendo.com.co"
+    location:
+      - "Barranquilla, Colombia"
+    modality:
+      - onsite
+    startDate: 2015-07-01
+    endDate: 2016-09-30
+    stack:
+      - name: Java
+        versions: [8]
+        category: Programming
+      - name: Vala
+        category: Programming
+      - name: GTK+
+        versions: [3]
+        category: Programming
+      - name: C#
+        category: Programming
+      - name: jQuery
+        category: Frontend
+      - name: Spring Framework
+        category: Backend
+        versions: [4.x]
+      - name: Spring Boot
+        category: Backend
+        versions: [1.x]
+      - name: Hibernate
+        category: Backend
+        versions: [4.3]
+      - name: PostgreSQL
+        category: Databases
+    highlights:
+      - Developed custom RFID tag-tracking daemons and inventory management systems across Desktop and Android platforms.
+      - Engineered a restaurant management interface in C#/WPF with low-level integrations for kitchen ticket printers and barcode scanners.
+      - Developed backend solutions using Java, Spring, and PostgreSQL, focusing on data migration and industrial hardware integration.
+education:
+  - institution: Politécnico Grancolombiano
+    url: "https://poligran.edu.co/"
+    area: Software Engineering
+    studyType: University Degree
+    startDate: 2019-01-01
+    endDate: 2023-06-30
+    location: "Bogotá, Colombia"
+affiliations: null
+awards:
+  - title: "Los Mejores en Educación 2009: Mejor ICFES Magdalena"
+    date: 2009-11-15
+    location: Colombia
+    issuer: "Colombia's Ministry of Education"
+    url: "https://periodismopublico.com/solo-un-cundinamarques-dentro-de"
+publications: null
+impact:
+  - Led modernization initiatives spanning Java 5 to Java 21+ across enterprise LMS and commerce platforms, automating architectural shifts via OpenRewrite.
+  - Designed zero-downtime migration strategies during enterprise mergers, ensuring transactional integrity and operational resilience.
+  - Standardized backend platform tooling using Gradle conventions, Version Catalogs, and Testcontainers.
+  - Scaled distributed backend services supporting 2M+ concurrent live-stream viewers for high-traffic media platforms.
+projects:
+  - name: IPSY Inc.
+    url: "https://ipsy.com/"
+    affiliation: Nexton
+    startDate: 2022-11-01
+    endDate: 2023-03-18
+    highlights:
+      - Led a migration of services from Java 8 to Java 21, introducing widespread changes like migrating to Spring Boot 3; creating a DSL for cache configuration on Caffeine vía YAML; adding Record support for our internal parser libraries; rewriting our internal Gradle build to Gradle 8.12, Kotlin, and Version Catalogs; introduced Testcontainers for integration tests; among other changes
+      - Designed a simple all-or-nothing migration system for user data on a company merge, with Scala scripts on Databricks using Apache Spark, PostgreSQL, and custom parse code for serialized PHP objects from Magento. This allowed us to migrate users in a lockstep, ensuring no intermediate statuses for migrations and no data loss.
+  - name: TrueAccord
+    url: "https://trueaccord.com/"
+    affiliation: EPAM Inc.
+    startDate: 2021-01-01
+    endDate: 2022-04-01
+    highlights:
+      - Worked on a streaming process to process hundreds of millions of records through Kafka to perform sensitive data scrubbing for PCI-DSS compliance, with a microservice written in Java 11, Quarkus, Kafka, and Micrometer.
+      - Wrote a custom verification script in Kotlin to aid in post-migration checks.
+      - Liberate data from MySQL 5.6 written in compressed Protobuf fields to Kafka topics with schema info readily available, by relying on CDC with Debezium and a custom stream processor written in Java 11 with Spring Boot, Kafka, configured with HOCON, and deserializing Protobufs on the fly with Reflection.
+      - Implement an accounts linking service that allows debtors to get their debts into a single consumer profile for payment purposes. The service uses Kafka, Spring Boot, Spring Cloud Streams, PostgreSQL 13, and a series of Kafka Connect connectors to stream the liberated data to be processed as it comes.
+      - Implement custom Kafka Connect SMTs to aid in stream processing tasks.
+  - name: Nordstrom
+    url: "https://nordstrom.com"
+    affiliation: S4N S.A.S.
+    startDate: 2020-03-15
+    endDate: 2020-12-31
+    highlights:
+      - Worked on a replatform project for the governance subsystem, migrating from a maze of Oracle 11c DBs with a deprecated no-code DB tool to a Java 11 + Spring Boot microservice talking to a PostgreSQL DB with Hibernate, and serving as a central source of truth, providing data via GraphQL queries and Kafka topics.
+      - Worked on implementing historical tables for PostgreSQL and Hibernate
+  - name: NFL Video Team / Gamepass
+    url: "http://nflgamepass.com"
+    affiliation: Bydrec inc.
+    startDate: 2018-08-01
+    endDate: 2020-03-30
+    highlights:
+      - A video delivery platform with a scale of 2M concurrent viewers. Backend microservices with a wide range of technologies in use. Worked on services with Java 8, Groovy, Cassandra, Oracle SQL, Apache Camel, Spring Boot, Hibernate, Node.js, Javascript(Flow), Kotlin, and XML Processing.
+      - Helped write internal tools to validate business logic regarding DMAs, Stream audio/video pairing, Metadata management, and CMS integration.
+  - name: Arpía
+    url: "https://www.facebook.com/Domicilios411/"
+    affiliation: NativApps S.A.S.
+    startDate: 2017-10-01
+    endDate: 2018-07-31
+    highlights:
+      - Worked on the backend, primarily in the orders microservices and coordination of the general architecture of the backend.
+      - To implement the services we used Kotlin, PostgreSQL, Spring Boot, ActiveMQ, Redis, and jOOQ.
+      - Had a hybrid setup between AWS and an onsite server where the cloud provider served the read-only content from a DB replica.
+  - name: Analítico
+    url: none
+    startDate: 2017-08-02
+    endDate: 2017-10-01
+    affiliation: NativApps S.A.S.
+    highlights:
+      - A HIPAA-compliant medical reporting platform.
+      - I worked on the data import and manipulation from SQL Server to MongoDB, using the Mirth message bus with Rhino (JS over JVM) scripts.
+      - Additional complex data processing was done with a custom-made Kotlin library.
+  - name: OpenMDM
+    url: none
+    startDate: 2017-02-01
+    endDate: 2017-08-01
+    affiliation: NativApps S.A.S.
+    highlights:
+      - OpenMDM is a mobile device management platform. It can track a device location, battery info, and connection status. It also includes a remote management module vía web browser, and a command execution system.
+      - Wrote the backend with Java 8, Spring Boot, ActiveMQ, MySQL, STOMP, and Flyway.
+      - Collaborated with the Android dev to create a custom VNC client/server.
+  - name: Trackvy
+    url: "https://www.trackvy.com/"
+    startDate: 2015-12-01
+    endDate: 2016-09-30
+    affiliation: Accendo S.A.S
+    highlights:
+      - Trackvy is a RFID-based stock management system.
+      - "Ported the C#sym.hash Windows CE Reader client to a new API version."
+      - Worked on a new readings portal for tool lending in C#sym.hash, Windows Forms, and SQLite.
+      - Worked on a new version of the tagging and movement desktop tool in Java 8, JavaFX, H2, and Spring Context.
+      - Worked on a port of the frontend from Angular 1 + Typescript + D3.js to HTML5, jQuery, Chartist.js, Bootstrap and Thymeleaf.
+      - Worked on a custom tag tracking daemon written in Vala to perform automatic discharge and charge of tools, with a custom GUI written in GTK+ 3
+  - name: Sushi2Home
+    url: "https://sushi2home.co"
+    startDate: 2016-05-01
+    endDate: 2016-07-15
+    affiliation: Accendo S.A.S
+    highlights:
+      - Sushi2Home is a sushi delivery service, available vía social media and its own website. It consists of a server in Ruby-on-Rails, with PostgreSQL and a customized instance of an e-commerce platform, Shoppe.
+      - Worked on the consumer-facing front-end, where I helped with the combo auto-generation, and a C#sym.hash (WPF) desktop app for handling incoming orders, order status, ticket printing, and POS integration.
+  - name: Crisálida
+    url: "https://www.atlantico.gov.co/index.php/noticias/prensa-mujer/2346-mujer-60836021"
+    startDate: 2016-01-01
+    endDate: 2016-04-20
+    affiliation: Accendo S.A.S
+    highlights:
+      - Crisálida was a government program to educate about sexual relationships, coexistence and child’s rights.
+      - Our portal managed surveys, student inscriptions, situational alarms, and report building (as Excel files).
+      - Worked on the backend with Spring Data, Spring MVC, Spring Boot, jOOQ, and PostgreSQL.
+      - Worked on the frontend with Javascript (JSX) with React, Redux in the data layer, and a Bootstrap 3- based design.
+  - name: WColombia
+    url: "https://accendo.com.co"
+    startDate: 2015-10-01
+    endDate: 2016-03-15
+    affiliation: Accendo S.A.S
+    highlights:
+      - A web tool for inventory management and income/expense tracking of slot machines, taking into account taxes and government regulations.
+      - Worked on the backend side, with Java 8, Spring Framework MVC, JPA, Hibernate, jOOQ and PostgreSQL.
+      - Integrated Report generation with jOOQ into an existing app using Hibernate.
+  - name: TerraInnova
+    url: "https://accendo.com.co"
+    startDate: 2015-07-01
+    endDate: 2015-10-01
+    affiliation: Accendo S.A.S
+    highlights:
+      - TerraInnova is an e-commerce and contact portal, specialized in agricultural commodities and keeping producers and consumers in touch.
+      - The development included a backend written in Java, using Spring MVC, jOOQ, PostgreSQL, and a frontend with Thymeleaf, Bootstrap and jQuery. The portal runs on CentOS 7, with AWS for the user data layer.
+      - Wrote most of the backend, designed the database, and managed the initial deployment.
+languages:
+  - language: Spanish
+    fluency: Native speaker
+  - language: English
+    fluency: Proficient (C1)
+  - language: Portuguese
+    fluency: Basic
+interests:
+  - Free Software
+  - Open Source
+  - Systems Programming
+  - JVM
+summary: "Senior Backend Architect & Modernization Specialist with 10+ years of experience leading high-stakes digital transformations for enterprise clients including Modern Campus, IPSY, NFL, and Nordstrom. Expert in JVM ecosystem evolution (Java 8-25, Kotlin, Scala, Spring Boot 3+), specializing in zero-downtime data migrations, developer productivity tooling, and large-scale refactoring automation using Gradle and OpenRewrite. Proven track record in orchestrating multi-team modernization initiatives and building resilient, observable backend platforms supporting 2M+ concurrent users. Passionate about technical strategy, dependency governance, and platform engineering."
+references:
+  - name: Daniel Jonás Kochian
+    reference: "I had the pleasure of working with Mario, and I can say he is a very solid and reliable engineer with a strong collaborative mindset. He consistently delivered high-quality work, was proactive in problem-solving, and communicated effectively with product and the rest of the team. Beyond his technical skills, I especially value his professionalism and commitment. I would definitely recommend him to any team looking for someone dependable and impactful."
+    url: "https://www.linkedin.com/in/daniel-jonas-kochian/"
+  - name: Alejandro Marin
+    reference: "Mario was an integral part of our data migration project, where we utilized Java 11, Quarkus, Kafka, Debezium, and custom Kafka Connect connectors. As my once colleague and direct report, Mario showcased exceptional skills in handling the complexity of migrating a substantial MySQL 5.1 database to PostgreSQL 12 and Snowflake. His expertise, especially in backend development and data migration, was evident in the success of the project. Mario's commitment to delivering high-quality results made him a standout team member, and I highly recommend him for any challenging technical endeavors."
+    url: "https://alejandrome.github.io/"
+  - name: Armando Alonzo
+    reference: "Mario was a key member of our video delivery team during a period of massive growth at the NFL. With his initiative in building the internal tools we needed to validate complex business logic and metadata management, we were able to automate a significant amout of our Alfresco CMS integrations"
+    url: "https://www.linkedin.com/in/armandoalonzo/"
+  - name: José Eduardo Sierra Vargas
+    reference: Mario has been an expert in the JVM ecosystem since our early days together at NativApps, with a strong architectural vision and bringing a great attitude to the team.
+    url: "https://www.linkedin.com/in/jos%C3%A9-eduardo-sierra-vargas-93bb03110/"
