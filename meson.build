@@ -42,7 +42,15 @@ if embed_yml
         output: final_pdf,
         command: [
             'sh',
-            '-c', '@0@ --json-output @INPUT@ tmp.json && @1@ \'@2@\' tmp.json > patched.json && @0@ --json-input patched.json @OUTPUT@'.format(qpdf.full_path(), jq.full_path(), jq_filter),
+            '-c',
+            '@0@ --json-output "$1" tmp.json && @1@ \'@2@\' tmp.json > patched.json && @0@ --json-input patched.json "$2"'.format(
+                qpdf.full_path(),
+                jq.full_path(),
+                jq_filter,
+            ),
+            'sh',
+            '@INPUT@',
+            '@OUTPUT@',
         ],
         build_by_default: true,
     )
