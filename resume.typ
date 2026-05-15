@@ -17,6 +17,7 @@
   showProjects: false,
   showReferences: true, // Show references
   linkReferences: false, // Some ATS get confused by links and pick up these links instead of my own
+  embedYaml: sys.inputs.at("embed_yml", default: "true") == "true",
 )
 
 // setrules and showrules can be overridden by re-declaring it here
@@ -60,11 +61,13 @@
 #cvpublications(cvdata)
 #cvreferences(cvdata, uservars)
 
-#pdf.attach(
-  "resume.yml",
-  relationship: "source",
-  mime-type: "text/yaml",
-  description: "Raw CV Data in YAML format, with extra info, machine-friendly",
-)
+#if uservars.embedYaml {
+  pdf.attach(
+    "resume.yml",
+    relationship: "source",
+    mime-type: "text/yaml",
+    description: "Raw CV Data in YAML format, with extra info, machine-friendly",
+  )
+}
 
 #endnote(cvdata, uservars)

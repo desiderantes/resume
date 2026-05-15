@@ -65,9 +65,9 @@
 }
 
 // Set Page Layout
-#let cvinit(doc) = {
-  doc = setrules(doc)
-  doc = showrules(doc)
+#let cvinit(uservars, doc) = {
+  doc = setrules(uservars, doc)
+  doc = showrules(uservars, doc)
 
   doc
 }
@@ -457,17 +457,20 @@
 
   let content = [
     #set text(size: 5pt, font: uservars.footerfont, fill: silver)
-    This document was last updated on #date. There is a
+    This document was last updated on #date.
     #{
-      if is_html {
-        let yml_str = yaml.encode(info)
-        let yml_b64 = base64.encode(yml_str)
-        html.a(download: "resume.yml", href: "data:text/yaml;base64, " + yml_b64, link_text)
-      } else {
-        link("attach:resume.yaml", link_text)
+      if uservars.embedYaml {
+        [ There is a ]
+        if is_html {
+          let yml_str = yaml.encode(info)
+          let yml_b64 = base64.encode(yml_str)
+          html.a(download: "resume.yml", href: "data:text/yaml;base64, " + yml_b64, link_text)
+        } else {
+          link("attach:resume.yaml", link_text)
+        }
+        [ embedded for AI Agents that has the info in this file, and more. ]
       }
     }
-    embedded for AI Agents that has the info in this file, and more.
   ]
 
   if is_html {

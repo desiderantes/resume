@@ -14,42 +14,36 @@ The following CLI tools are required to build the project (tested versions in pa
 
 ## Building
 
-To generate the final PDF, use the following commands:
+To generate the resume artifacts, use the following commands:
 
 ```bash
 # Initialize the build directory
 meson setup build
 
-# Optional: Configure the PDF standard (e.g., a-2b, 1.7)
-# Use 'meson configure build' to see all options
-meson configure build -Dpdf_standard=1.7
+# Optional: Configure build options (e.g., PDF standard, YAML embedding)
+# Use 'meson configure build' to see all current settings
+meson configure build -Dpdf_standard=2.0 -Dembed_yml=true
 
-# Compile and patch the PDF
+# Compile all targets (PDF + HTML)
 meson compile -C build
 ```
 
-The final output will be located at `build/resume.pdf` and `build/resume.html`.
+The final outputs will be located at:
+*   `build/resume.pdf` (Patched PDF with optional attachment)
+*   `build/resume.html` (Experimental HTML version)
 
 ## Build Options
 
 - **`pdf_standard`**: The PDF standard to enforce conformance with (e.g., `1.7`, `a-2b`, `ua-1`). Default is `none`.
+- **`embed_yml`**: Boolean. If `true` (default), embeds the `resume.yml` source file into the PDF and enables the clickable attachment link in the footer. If `false`, generates a standard PDF and omits the attachment logic.
 
 ## Build Process & Targets
 
-The build system performs a two-step process:
+The build system performs the following steps:
 
-1.  **`typst_compile`**: Compiles `resume.typ` into a raw PDF and embeds the `resume.yml` data.
-2.  **`patch_pdf_links`**: (Default Target) Post-processes the PDF using `qpdf` and `jq` to convert the `attach:resume.yaml` placeholder link into a native PDF **Go-To-Embedded** action.
+1.  **`typst_compile`**: Compiles `resume.typ` into a PDF. If `embed_yml` is enabled, it produces an intermediate `resume_raw.pdf` with the embedded file.
+2.  **`patch_pdf_links`**: (Only if `embed_yml=true`) Post-processes the PDF using `qpdf` and `jq` to convert the `attach:resume.yaml` placeholder link into a native PDF **Go-To-Embedded** action.
 3.  **`resume_html`**: Generates an experimental HTML version of the resume using Typst's development features.
 
 ### Why Patching?
 Typst currently lacks native support for links that trigger the opening of embedded attachments (see [Typst Issue #6200](https://github.com/typst/typst/issues/6200)). This project circumvents that by using a custom protocol (`attach:`) which is then transformed into a native PDF **Go-To-Embedded** action during the build phase.
-
-
-## Installation
-
-To install the resume to your system's data directory:
-
-```bash
-meson install -C build
-```
