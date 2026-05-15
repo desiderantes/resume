@@ -1,0 +1,54 @@
+name: Build Resume
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y meson ninja-build qpdf jq
+
+      - name: Install Typst
+        run: |
+          TYPST_VERSION=$(curl -s https://api.github.com/repos/typst/typst/releases/latest | jq -r .tag_name)
+          curl -L "https://github.com/typst/typst/releases/download/${TYPST_VERSION}/typst-x86_64-unknown-linux-musl.tar.xz" -o typst.tar.xz
+          tar -xvf typst.tar.xz
+          sudo mv typst-x86_64-unknown-linux-musl/typst /usr/local/bin/
+          typst --version
+
+      - name: Configure build
+        run: meson setup build
+
+      - name: Build project
+        run: meson compile -C build
+
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+      - name: Prepare artifact
+        run: |
+          cp build/resume.pdf "resume-${{ steps.date.outputs.date }}.pdf"
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdf-${{ steps.date.outputs.date }}
+          path: resume-${{ steps.date.outputs.date }}.pdf
+
+      - name: Upload HTML artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-html-${{ steps.date.outputs.date }}
+          path: build/resume.html

@@ -47,3 +47,10 @@ The build system performs the following steps:
 
 ### Why Patching?
 Typst currently lacks native support for links that trigger the opening of embedded attachments (see [Typst Issue #6200](https://github.com/typst/typst/issues/6200)). This project circumvents that by using a custom protocol (`attach:`) which is then transformed into a native PDF **Go-To-Embedded** action during the build phase.
+
+## Continuous Integration
+
+This project includes a **GitHub Action** (`.github/workflows/build.yml`) that automatically:
+1.  Installs all required dependencies and the latest Typst compiler.
+2.  Builds the PDF and HTML versions of the resume.
+3.  Uploads the results as artifacts, renamed to include the current date.
