@@ -4,15 +4,6 @@
 // Load CV Data from YAML
 //#let info = yaml("cv.typ.yml")
 
-// Variables
-//#let headingfont = "Linux Libertine" // Set font for headings
-//#let bodyfont = "Linux Libertine"   // Set font for body
-//#let fontsize = 10pt // 10pt, 11pt, 12pt
-//#let linespacing = 6pt
-
-//#let showAddress = true // true/false Show address in contact info
-//#let showNumber = true  // true/false Show phone number in contact info
-
 // set rules
 #let setrules(uservars, doc) = {
   set page(
@@ -26,8 +17,8 @@
 
   // Set Text settings
   set text(
-    font: uservars.bodyfont,
-    size: uservars.fontsize,
+    font: uservars.bodyfont.name,
+    size: uservars.bodyfont.size,
     hyphenate: false,
   )
 
@@ -92,12 +83,7 @@
     box(link("mailto:" + info.personal.email)),
     if uservars.showNumber { box(link("tel:" + info.personal.phone)) } else { none },
     box(link(info.personal.url)[#info.personal.url.split("//").at(1)]),
-  )
-
-  // Remove any none elements from the list
-  #if none in profiles {
-    profiles.remove(profiles.position(it => it == none))
-  }
+  ).filter(it => it != none) // Filter out none elements from the profile array
 
   // Add any social profiles
   #if info.personal.profiles.len() > 0 {
@@ -109,9 +95,9 @@
   }
 
   // #set par(justify: false)
-  #set text(font: uservars.bodyfont, weight: "medium", size: uservars.fontsize * 1)
+  #set text(font: uservars.bodyfont.name, weight: uservars.bodyfont.weight, size: uservars.bodyfont.size * 1)
   #pad(x: 0em)[
-    #profiles.join([#sym.space.en #sym.diamond.filled #sym.space.en])
+    #profiles.join([#sym.space.nobreak.narrow #sym.diamond.filled #sym.space.nobreak.narrow])
   ]
 ]
 

@@ -17,7 +17,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y meson ninja-build qpdf jq
+          sudo apt-get install -y meson ninja-build qpdf jq fonts-inter fonts-ibm-plex fontconfig
 
       - name: Install Typst
         run: |

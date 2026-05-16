@@ -4,10 +4,13 @@
 #let cvdata = yaml("resume.yml")
 
 #let uservars = (
-  headingfont: "Libertinus Serif", // Set font for headings
-  bodyfont: "Libertinus Serif", // Set font for body
+  headingfont: "IBM Plex Serif", // Set font for headings
+  bodyfont: (
+    name: "Inter",
+    weight: "medium",
+    size: 10pt, // 10pt, 11pt, 12pt
+  ), // Set font for body
   footerfont: "IBM Plex Mono", // Set font for end note/footer
-  fontsize: 10pt, // 10pt, 11pt, 12pt
   linespacing: 6pt,
   showAddress: true, // true/false Show address in contact info
   showNumber: false, // true/false Show phone number in contact info

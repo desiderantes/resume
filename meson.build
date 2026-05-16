@@ -4,6 +4,22 @@ typst = find_program('typst', required: true)
 qpdf = find_program('qpdf', required: true)
 jq = find_program('jq', required: true)
 
+# Font verification
+fclist = find_program('fc-list', required: false)
+if fclist.found()
+    required_fonts = ['IBM Plex Serif', 'Inter Medium', 'IBM Plex Mono']
+    foreach f : required_fonts
+        r = run_command(fclist, f, check: false)
+        if r.returncode() != 0 or r.stdout().strip() == ''
+            # We don't fail hard here because some environments might have fonts
+            # in non-standard locations that fc-list misses, but we warn.
+            warning(
+                'Font "@0@" not found by fc-list. Rendering may be incorrect.'.format(f),
+            )
+        endif
+    endforeach
+endif
+
 # Explicitly define the entrypoint and output
 main_typ = 'resume.typ'
 raw_pdf = 'resume_raw.pdf'
@@ -42,8 +58,7 @@ if embed_yml
         output: final_pdf,
         command: [
             'sh',
-            '-c',
-            '@0@ --json-output "$1" tmp.json && @1@ \'@2@\' tmp.json > patched.json && @0@ --json-input patched.json "$2"'.format(
+            '-c', '@0@ --json-output "$1" tmp.json && @1@ \'@2@\' tmp.json > patched.json && @0@ --json-input patched.json "$2"'.format(
                 qpdf.full_path(),
                 jq.full_path(),
                 jq_filter,

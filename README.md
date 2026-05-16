@@ -12,6 +12,12 @@ The following CLI tools are required to build the project (tested versions in pa
 - **qpdf** (>= 12.3.2): Used for PDF structural transformations.
 - **jq** (>= 1.8.1): Used for JSON-based PDF link patching.
 
+### Fonts
+The following font families must be installed for correct rendering:
+- **Inter**: Used for the main body.
+- **IBM Plex Serif**: Used for headings.
+- **IBM Plex Mono**: Used for the footer/end note.
+
 ## Building
 
 To generate the resume artifacts, use the following commands:
