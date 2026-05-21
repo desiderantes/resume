@@ -10,6 +10,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -40,6 +42,7 @@ jobs:
       - name: Prepare artifact
         run: |
           cp build/resume.pdf "resume-${{ steps.date.outputs.date }}.pdf"
+          cp build/resume.html "resume-${{ steps.date.outputs.date }}.html"
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
@@ -51,4 +54,14 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: resume-html-${{ steps.date.outputs.date }}
-          path: build/resume.html
+          path: resume-${{ steps.date.outputs.date }}.html
+
+      - name: Create Release
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') && !contains(github.event.head_commit.message, 'WIP')
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.date.outputs.date }}
+          name: Release ${{ steps.date.outputs.date }}
+          files: |
+            resume-${{ steps.date.outputs.date }}.pdf
+            resume-${{ steps.date.outputs.date }}.html

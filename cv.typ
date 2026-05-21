@@ -166,8 +166,17 @@
         // Create a block layout for each education entry
         block(width: 100%, breakable: false)[
           // Line 1: Company and Location
-          #if w.keys().contains("client") { [*#link(w.url)[#w.client via #w.organization]*] } else {
-            [*#link(w.url)[#w.organization]*]
+          #{
+            let org_name = w.organization.name
+            let org_url = w.organization.at("url", default: none)
+            let org_content = if org_url != none { link(org_url)[#org_name] } else { org_name }
+
+            if w.keys().contains("client") {
+              let client_name = w.client.name
+              let client_url = w.client.at("url", default: none)
+              let client_content = if client_url != none { link(client_url)[#client_name] } else { client_name }
+              [*#client_content via #org_content*]
+            } else { [*#org_content*] }
           } #h(1fr) *#w.location.join("/")* \
           // Line 2: Degree and Date Range
           #text(style: "italic")[#w.position] #h(1fr) #start #sym.dash.en #end \[ #(
@@ -197,7 +206,16 @@
         // Create a block layout for each education entry
         block(width: 100%)[
           // Line 1: Institution and Location
-          *#link(org.url)[#org.organization]* #h(1fr) *#org.location* \
+          #{
+            let org_content = if type(org.organization) == "string" {
+              if org.keys().contains("url") { link(org.url)[#org.organization] } else { org.organization }
+            } else {
+              let org_name = org.organization.name
+              let org_url = org.organization.at("url", default: none)
+              if org_url != none { link(org_url)[#org_name] } else { org_name }
+            }
+            [*#org_content*]
+          } #h(1fr) *#org.location* \
           // Line 2: Degree and Date Range
           #text(style: "italic")[#org.position] #h(1fr)
           #start #sym.dash.en #end \
@@ -457,6 +475,7 @@
         [ embedded for AI Agents that has the info in this file, and more. ]
       }
     }
+    Source code: #link("https://github.com/desiderantes/resume")[github.com/desiderantes/resume]
   ]
 
   if is_html {

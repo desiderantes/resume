@@ -16,11 +16,14 @@ personal:
       username: desiderantes
       url: "https://github.com/desiderantes"
 work:
-  - organization: Softensity
+  - organization:
+      name: Softensity
+      url: https://softensity.com
     contract: outsourcing
-    client: Modern Campus
+    client:
+      name: Modern Campus
+      url: https://moderncampus.com
     position: Lead Backend Developer
-    url: https://softensity.com
     location:
       - Rio de Janeiro, Brazil
     modality:
@@ -53,11 +56,14 @@ work:
       - Leading the architectural evolution of a legacy LMS monolith, orchestrating a multi-team transition from Java 5/Struts 1.x to a modular Java 21-25 (LTS) and Spring Boot 3-4 ecosystem.
       - Engineered custom OpenRewrite and Gradle automation tooling to accelerate large-scale JVM modernization, enabling repeatable refactoring workflows across legacy Ant/Hibernate/Java codebases.
       - Mentoring senior engineers on modern JVM features and platform engineering best practices to reduce technical debt and improve organizational deployment reliability.
-  - organization: Nexton
+  - organization:
+      name: Nexton
+      url: "https://nextonlabs.com"
     contract: outsourcing
-    client: IPSY
+    client:
+      name: IPSY
+      url: "https://ipsy.com"
     position: Senior Backend Developer
-    url: "https://nextonlabs.com"
     location:
       - "Bogotá, Colombia"
       - "Rio de Janeiro, Brazil"
@@ -97,11 +103,14 @@ work:
       - Led a technical baseline upgrade from Java 8/Spring Boot 2.0 to Java 21/Spring Boot 3.x across core commerce services, integrating Micrometer for enhanced production observability.
       - Designed and implemented organization-wide Gradle platform conventions, Version Catalogs, and Testcontainers tooling to standardize builds, dependency governance, and local development workflows.
       - Evolved core commerce systems over a 3-year lifecycle, achieving measurable latency reduction and observability gains through post-launch refactoring.
-  - organization: EPAM Inc.
+  - organization:
+      name: EPAM Inc.
+      url: "https://epam.com"
     position: Senior Backend Developer
-    url: "https://epam.com"
     contract: outsourcing
-    client: TrueAccord
+    client:
+      name: TrueAccord
+      url: "https://trueaccord.com"
     location:
       - "Bogotá, Colombia"
     modality:
@@ -133,11 +142,14 @@ work:
       - Engineered high-throughput streaming microservices (Kafka/Quarkus) to perform PCI-compliant profile merging and sensitive data scrubbing for 100M+ financial records.
       - Developed custom Kafka Connect connectors to manage Protobuf/Avro schema evolution in sync with centralized schema repositories, ensuring zero data loss during stream processing.
       - Led the implementation of an account-linking service that unified disparate debtor records into single consumer profiles, improving payment recovery rates.
-  - organization: S4N S.A.S.
+  - organization:
+      name: S4N S.A.S.
+      url: "https://s4n.co"
     contract: outsourcing
-    client: Nordstrom
+    client:
+      name: Nordstrom
+      url: "https://nordstrom.com"
     position: Backend Developer
-    url: "https://s4n.co"
     location:
       - "Bogotá, Colombia"
     modality:
@@ -165,11 +177,14 @@ work:
     highlights:
       - Replatformed the governance subsystem by centralizing data from legacy Oracle 11 silos into a unified Spring Boot source of truth, exposing GraphQL APIs and Kafka streams for real-time event sourcing.
       - Implemented a high-performance historical data tracking system using Hibernate/Envers, customized to reuse existing legacy audit schemas in PostgreSQL.
-  - organization: Bydrec Inc.
+  - organization:
+      name: Bydrec Inc.
+      url: "https://bydrec.com"
     contract: outsourcing
-    client: NFL
+    client:
+      name: NFL
+      url: "https://nfl.com"
     position: Senior Backend Developer
-    url: "https://bydrec.com"
     location:
       - "Barranquilla, Colombia"
     modality:
@@ -195,10 +210,11 @@ work:
     highlights:
       - Scaled backend video delivery services to support 2M+ concurrent viewers during peak live events, ensuring high availability across a distributed Java/Groovy/Cassandra stack.
       - Engineered internal automation tools to validate business logic for DMAs, A/V pairing, and CMS integration.
-  - organization: NativApps S.A.S.
+  - organization:
+      name: NativApps S.A.S.
+      url: "https://nativapps.com.co"
     contract: full-time
     position: Software Developer
-    url: "https://nativapps.com.co"
     location:
       - "Barranquilla, Colombia"
     modality:
@@ -237,10 +253,11 @@ work:
       - Engineered HIPAA-compliant medical data migrations (SQL Server to MongoDB) using Mirth and Rhino/JS, ensuring high accuracy in HL7 mapping and deduplication.
       - Developed geolocation and spatial indexing modules using H3 and PostGIS for a delivery application.
       - Built a custom VNC layer for Android and a backend MDM (Mobile Device Management) service to track device health and location.
-  - organization: Accendo S.A.S
+  - organization:
+      name: Accendo S.A.S
+      url: "https://accendo.com.co"
     contract: full-time
     position: Junior Software Developer
-    url: "https://accendo.com.co"
     location:
       - "Barranquilla, Colombia"
     modality:
