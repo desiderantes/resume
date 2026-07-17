@@ -37,11 +37,17 @@
             day: int(isodate.slice(8, 10))
         )
         date = date.display("[month repr:short]") + " " + date.display("[year repr:full]")
-    } 
-    
+    }
+
     return date
 }
 
 #let hasvalid(map, string_name) = {
   return map.keys().contains(string_name) and map.at(string_name) != none
+}
+
+#let removekey(dict, key) = {
+  let new-dict = dict
+  let _ = new-dict.remove(key) // Mutates copy and discards the removed value
+  return new-dict
 }

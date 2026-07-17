@@ -1,4 +1,5 @@
 #import "cv.typ": *
+#import "utils.typ"
 
 // Load CV data from YAML
 #let cvdata = yaml("resume.yml")
@@ -8,10 +9,10 @@
   bodyfont: (
     name: "Inter",
     weight: "medium",
-    size: 10pt, // 10pt, 11pt, 12pt
+    size: 9.5pt, // 10pt, 11pt, 12pt
   ), // Set font for body
   footerfont: "IBM Plex Mono", // Set font for end note/footer
-  linespacing: 6pt,
+  linespacing: 4.5pt,
   showAddress: true, // true/false Show address in contact info
   showNumber: false, // true/false Show phone number in contact info
   showPostal: false, // Boolean for full address
@@ -37,7 +38,7 @@
 }
 
 #let cvinit(doc) = {
-  doc = setrules(uservars, doc)
+  doc = setrules(uservars, cvdata, doc)
   doc = showrules(uservars, doc)
   doc = customrules(doc)
 
@@ -67,10 +68,9 @@
 #if uservars.embedYaml {
   pdf.attach(
     "resume.yml",
+    bytes(yaml.encode(if uservars.showProjects {cvdata} else  { utils.removekey(cvdata,"projects")} )),
     relationship: "source",
     mime-type: "text/yaml",
     description: "Raw CV Data in YAML format, with extra info, machine-friendly",
   )
 }
-
-#endnote(cvdata, uservars)

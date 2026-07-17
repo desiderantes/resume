@@ -3,6 +3,7 @@ personal:
   email: desiderantes93@gmail.com
   phone: "+55 (21) 999040893"
   url: "https://desiderantes.com"
+  title: "Software Developer"
   location:
     city: Rio de Janeiro
     region: RJ
@@ -15,6 +16,16 @@ personal:
     - network: GitHub
       username: desiderantes
       url: "https://github.com/desiderantes"
+summary: >
+  Backend Architect, JVM Platform Specialist with 10+ years of experience leading high-stakes digital transformations for enterprise clients including Modern Campus, IPSY, NFL, and Nordstrom.
+  Expert in JVM ecosystem evolution (Java 8-25, Kotlin, Scala, Spring Boot 3+), with a focus on event streaming, developer productivity tooling, and large-scale refactoring automation
+  using Gradle and OpenRewrite. Proven track record in orchestrating multi-team modernization initiatives and building resilient, observable backend platforms supporting 2M+ concurrent users.
+  Passionate about technical strategy, dependency governance, and platform engineering.
+impact:
+  - Pioneered automated enterprise-wide JVM upgrades (Java 5 to 21+), developing custom rewrite scripts that eliminated manual refactoring overhead across dozens of legacy codebases.
+  - Architected zero-downtime user data migrations during corporate acquisitions, ensuring transactional integrity and zero business interruption.
+  - Established organization-wide developer platforms and build conventions, standardizing dependency governance and slashing local environment setup times for engineering teams.
+  - Scaled distributed video delivery and metadata services to support 2M+ concurrent live-stream viewers during peak global media events under high-availability constraints.
 work:
   - organization:
       name: Softensity
@@ -53,9 +64,9 @@ work:
         versions: [1.x]
         category: Backend
     highlights:
-      - Leading the architectural evolution of a legacy LMS monolith, orchestrating a multi-team transition from Java 5/Struts 1.x to a modular Java 21-25 (LTS) and Spring Boot 3-4 ecosystem.
-      - Engineered custom OpenRewrite and Gradle automation tooling to accelerate large-scale JVM modernization, enabling repeatable refactoring workflows across legacy Ant/Hibernate/Java codebases.
-      - Mentoring senior engineers on modern JVM features and platform engineering best practices to reduce technical debt and improve organizational deployment reliability.
+      - Orchestrated a cross-functional modernization of a legacy LMS monolith, aligning 5+ engineering teams on a phased transition from Java 5/Struts 1.x to a modular Java 21 and Spring Boot 4 microservices architecture.
+      - Engineered custom OpenRewrite and Gradle automation tooling that accelerated JVM modernization, reducing manual migration effort by an estimated 80% and eliminating refactoring errors across legacy Ant/Hibernate/Java codebases.
+      - Mentored and sponsored senior engineers on platform engineering, dependency governance, and modern JVM best practices, establishing updated coding standards across the engineering department, reducing technical debt and improving organizational deployment reliability.
   - organization:
       name: Nexton
       url: "https://nextonlabs.com"
@@ -99,7 +110,7 @@ work:
         category: Databases
         versions: [4, 7]
     highlights:
-      - Designed and executed a zero-downtime migration strategy for user records during a company merge, utilizing Scala on Databricks/Spark to migrate legacy MySQL data to PostgreSQL.
+      - Architected and executed a zero-downtime migration strategy during an enterprise merger, safely transitioning 5M+ active and legacy customer accounts with zero data loss, leveraging Scala on Databricks/Spark to migrate legacy MySQL data to PostgreSQL.
       - Led a technical baseline upgrade from Java 8/Spring Boot 2.0 to Java 21/Spring Boot 3.x across core commerce services, integrating Micrometer for enhanced production observability.
       - Designed and implemented organization-wide Gradle platform conventions, Version Catalogs, and Testcontainers tooling to standardize builds, dependency governance, and local development workflows.
       - Evolved core commerce systems over a 3-year lifecycle, achieving measurable latency reduction and observability gains through post-launch refactoring.
@@ -139,9 +150,9 @@ work:
       - name: Snowflake
         category: Databases
     highlights:
-      - Engineered high-throughput streaming microservices (Kafka/Quarkus) to perform PCI-compliant profile merging and sensitive data scrubbing for 100M+ financial records.
+      - Architected an event-driven account-linking service unifiying disparate debtor records into single consumer profiles, leveraging Kafka Connect and Quarkus microservices to perform PCI-compliant profile merging and sensitive data scrubbing for 100M+ financial records.
       - Developed custom Kafka Connect connectors to manage Protobuf/Avro schema evolution in sync with centralized schema repositories, ensuring zero data loss during stream processing.
-      - Led the implementation of an account-linking service that unified disparate debtor records into single consumer profiles, improving payment recovery rates.
+      - Led the implementation of an account-linking service that unified disparate debtor records into single consumer profiles, improving payment recovery rates by ~35%.
   - organization:
       name: S4N S.A.S.
       url: "https://s4n.co"
@@ -308,11 +319,6 @@ awards:
     issuer: "Colombia's Ministry of Education"
     url: "https://periodismopublico.com/solo-un-cundinamarques-dentro-de"
 publications: null
-impact:
-  - Led modernization initiatives spanning Java 5 to Java 21+ across enterprise LMS and commerce platforms, automating architectural shifts via OpenRewrite.
-  - Designed zero-downtime migration strategies during enterprise mergers, ensuring transactional integrity and operational resilience.
-  - Standardized backend platform tooling using Gradle conventions, Version Catalogs, and Testcontainers.
-  - Scaled distributed backend services supporting 2M+ concurrent live-stream viewers for high-traffic media platforms.
 projects:
   - name: IPSY Inc.
     url: "https://ipsy.com/"
@@ -436,7 +442,6 @@ interests:
   - Open Source
   - Systems Programming
   - JVM
-summary: "Senior Backend Architect & Modernization Specialist with 10+ years of experience leading high-stakes digital transformations for enterprise clients including Modern Campus, IPSY, NFL, and Nordstrom. Expert in JVM ecosystem evolution (Java 8-25, Kotlin, Scala, Spring Boot 3+), specializing in zero-downtime data migrations, developer productivity tooling, and large-scale refactoring automation using Gradle and OpenRewrite. Proven track record in orchestrating multi-team modernization initiatives and building resilient, observable backend platforms supporting 2M+ concurrent users. Passionate about technical strategy, dependency governance, and platform engineering."
 references:
   - name: Daniel Jonás Kochian
     reference: "I had the pleasure of working with Mario, and I can say he is a very solid and reliable engineer with a strong collaborative mindset. He consistently delivered high-quality work, was proactive in problem-solving, and communicated effectively with product and the rest of the team. Beyond his technical skills, I especially value his professionalism and commitment. I would definitely recommend him to any team looking for someone dependable and impactful."

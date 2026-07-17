@@ -1,36 +1,6 @@
 #import "@preview/based:0.2.0": base64
 #import "utils.typ"
 
-// Load CV Data from YAML
-//#let info = yaml("cv.typ.yml")
-
-// set rules
-#let setrules(uservars, doc) = {
-  set page(
-    paper: "us-legal",
-    //"a4",
-    //"us-letter",
-    numbering: "1 / 1",
-    number-align: center, // left, center, right
-    margin: 1.25cm, // 1.25cm, 1.87cm, 2.5cm
-  )
-
-  // Set Text settings
-  set text(
-    font: uservars.bodyfont.name,
-    size: uservars.bodyfont.size,
-    hyphenate: false,
-  )
-
-  // Set Paragraph settings
-  set par(
-    leading: uservars.linespacing,
-    justify: true,
-  )
-
-  doc
-}
-
 // show rules
 #let showrules(uservars, doc) = {
   // Uppercase Section Headings
@@ -55,13 +25,7 @@
   doc
 }
 
-// Set Page Layout
-#let cvinit(uservars, doc) = {
-  doc = setrules(uservars, doc)
-  doc = showrules(uservars, doc)
 
-  doc
-}
 
 // Address
 #let addresstext(info, uservars) = {
@@ -478,13 +442,59 @@
     Source code: #link("https://github.com/desiderantes/resume")[github.com/desiderantes/resume]
   ]
 
-  if is_html {
-    html.hr()
-    html.footer(content)
-  } else {
-    place(
-      bottom + center,
-      block[#content],
-    )
-  }
+  content
+}
+
+
+// set rules
+#let setrules(uservars, info, doc) = {
+  set page(
+    paper:
+    //"us-legal",
+    "a4",
+    //"us-letter",
+    numbering: "1 / 1",
+    number-align: center, // left, center, right
+    margin: (
+      top: 1.25cm,
+      bottom: 1.75cm,
+      x: 1.5cm
+    ),
+    header: context {
+      if counter(page).get().first() > 1 [
+        #set text(size: 8pt, fill: color.linear-rgb(47, 47, 47, 255))
+        #info.personal.name
+        #h(1fr)
+        #info.personal.title
+        #v(-4pt)
+        #line(length: 100%, stroke: 0.5pt + gray)
+      ]
+    },
+    footer: context {
+      let current = counter(page).get().first()
+      let total = counter(page).final().first()
+      align(center)[
+        #if current == total {
+          endnote(info, uservars)
+          v(3pt)
+        }
+        #counter(page).display("1 / 1", both: true)
+      ]
+    }
+  )
+
+  // Set Text settings
+  set text(
+    font: uservars.bodyfont.name,
+    size: uservars.bodyfont.size,
+    hyphenate: false,
+  )
+
+  // Set Paragraph settings
+  set par(
+    leading: uservars.linespacing,
+    justify: true,
+  )
+
+  doc
 }
