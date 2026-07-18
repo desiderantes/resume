@@ -3,15 +3,5 @@ build/
 
 # Typst and build artifacts
 *.pdf
-!resume.pdf # Keep this if you want to track the final resume, but usually it's ignored
-tmp.json
-patched.json
-raw.json
-
-# If you prefer to NOT track any generated PDFs (recommended):
-*.pdf
-
-# Python cache
-__pycache__/
-*.py[cod]
-*$py.class
+!diploma.pdf
+!SGCV20102985332.pdf

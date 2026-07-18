@@ -1,4 +1,4 @@
-project('resume', version: '0.1.0')
+project('resume', version: '0.1.0', meson_version: '>= 1.9.0',)
 
 typst = find_program('typst', required: true)
 qpdf = find_program('qpdf', required: true)
@@ -29,10 +29,16 @@ final_pdf = 'resume.pdf'
 project_sources = ['cv.typ', 'utils.typ', 'resume.yml']
 
 embed_yml = get_option('embed_yml')
+embed_diploma = get_option('embed_diploma')
+embed_certs = get_option('embed_certs')
 
 # Step 1: Compile the PDF with Typst
 typst_args = [typst, 'compile', '--features', 'html', '@INPUT@', '@OUTPUT@']
-typst_args += ['--input', 'embed_yml=@0@'.format(embed_yml)]
+
+embed_args =  ['--input', 'embed_yml=@0@'.format(embed_yml)]
+embed_args += ['--input', 'embed_diploma=@0@'.format(embed_diploma)]
+embed_args += ['--input', 'embed_certs=@0@'.format(embed_certs)]
+typst_args += embed_args
 
 pdf_standard = get_option('pdf_standard')
 if pdf_standard != 'none'
@@ -86,11 +92,10 @@ html_args = [
     typst,
     'compile',
     '--features', 'html',
-    '--input', 'format=html',
-    '--input', 'embed_yml=@0@'.format(embed_yml),
+    embed_args,
     '@INPUT@',
     '@OUTPUT@',
-]
+].flatten()
 
 custom_target(
     'resume_html',

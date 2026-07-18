@@ -3,7 +3,7 @@ personal:
   email: desiderantes93@gmail.com
   phone: "+55 (21) 999040893"
   url: "https://desiderantes.com"
-  title: "Software Developer"
+  title: "Lead Backend Engineer"
   location:
     city: Rio de Janeiro
     region: RJ
@@ -17,15 +17,16 @@ personal:
       username: desiderantes
       url: "https://github.com/desiderantes"
 summary: >
-  Backend Architect, JVM Platform Specialist with 10+ years of experience leading high-stakes digital transformations for enterprise clients including Modern Campus, IPSY, NFL, and Nordstrom.
-  Expert in JVM ecosystem evolution (Java 8-25, Kotlin, Scala, Spring Boot 3+), with a focus on event streaming, developer productivity tooling, and large-scale refactoring automation
-  using Gradle and OpenRewrite. Proven track record in orchestrating multi-team modernization initiatives and building resilient, observable backend platforms supporting 2M+ concurrent users.
-  Passionate about technical strategy, dependency governance, and platform engineering.
+  Backend Architect and JVM Platform Specialist with 10+ years of experience leading high-stakes digital transformations for enterprise clients including Modern Campus, IPSY, NFL, and Nordstrom.
+  Expert in JVM ecosystem evolution (Java 8-25, Kotlin, Scala, Spring Boot 3+), with a focus on event streaming, API design, developer tooling, and large-scale refactoring automation
+  using Gradle and OpenRewrite. Proven track record orchestrating multi-team modernization initiatives and building resilient, observable backend platforms supporting 2M+ concurrent users.
+  Passionate about technical strategy, dependency governance, platform engineering, and mentoring engineers toward higher-leverage delivery.
 impact:
   - Pioneered automated enterprise-wide JVM upgrades (Java 5 to 21+), developing custom rewrite scripts that eliminated manual refactoring overhead across dozens of legacy codebases.
   - Architected zero-downtime user data migrations during corporate acquisitions, ensuring transactional integrity and zero business interruption.
   - Established organization-wide developer platforms and build conventions, standardizing dependency governance and slashing local environment setup times for engineering teams.
   - Scaled distributed video delivery and metadata services to support 2M+ concurrent live-stream viewers during peak global media events under high-availability constraints.
+  - Owned and evolved mission-critical backend systems through iterative delivery and post-launch refactoring, improving reliability, observability, and onboarding ergonomics.
 work:
   - organization:
       name: Softensity
@@ -89,6 +90,8 @@ work:
       - name: Kotlin
         versions: [1.8]
         category: Programming
+      - name: Scala
+        category: Programming
       - name: Spring Boot
         versions: [2.x, 3.x]
         category: Backend
@@ -113,7 +116,7 @@ work:
       - Architected and executed a zero-downtime migration strategy during an enterprise merger, safely transitioning 5M+ active and legacy customer accounts with zero data loss, leveraging Scala on Databricks/Spark to migrate legacy MySQL data to PostgreSQL.
       - Led a technical baseline upgrade from Java 8/Spring Boot 2.0 to Java 21/Spring Boot 3.x across core commerce services, integrating Micrometer for enhanced production observability.
       - Designed and implemented organization-wide Gradle platform conventions, Version Catalogs, and Testcontainers tooling to standardize builds, dependency governance, and local development workflows.
-      - Evolved core commerce systems over a 3-year lifecycle, achieving measurable latency reduction and observability gains through post-launch refactoring.
+      - Owned core commerce backend systems for 3+ years, driving iterative architecture and post-launch refactoring that improved latency, observability, and onboarding speed in user-facing flows.
   - organization:
       name: EPAM Inc.
       url: "https://epam.com"
@@ -149,8 +152,10 @@ work:
         category: Databases
       - name: Snowflake
         category: Databases
+      - name: Redis
+        category: Databases
     highlights:
-      - Architected an event-driven account-linking service unifiying disparate debtor records into single consumer profiles, leveraging Kafka Connect and Quarkus microservices to perform PCI-compliant profile merging and sensitive data scrubbing for 100M+ financial records.
+      - Architected an event-driven account-linking service unifying disparate debtor records into single consumer profiles, leveraging Kafka Connect and Quarkus microservices to perform PCI-compliant profile merging and sensitive data scrubbing for 100M+ financial records.
       - Developed custom Kafka Connect connectors to manage Protobuf/Avro schema evolution in sync with centralized schema repositories, ensuring zero data loss during stream processing.
       - Led the implementation of an account-linking service that unified disparate debtor records into single consumer profiles, improving payment recovery rates by ~35%.
   - organization:
@@ -160,7 +165,7 @@ work:
     client:
       name: Nordstrom
       url: "https://nordstrom.com"
-    position: Backend Developer
+    position: Senior Backend Developer
     location:
       - "Bogotá, Colombia"
     modality:
@@ -188,6 +193,7 @@ work:
     highlights:
       - Replatformed the governance subsystem by centralizing data from legacy Oracle 11 silos into a unified Spring Boot source of truth, exposing GraphQL APIs and Kafka streams for real-time event sourcing.
       - Implemented a high-performance historical data tracking system using Hibernate/Envers, customized to reuse existing legacy audit schemas in PostgreSQL.
+      - Also delivered backend services for the Warehouse Management group, extending the platform beyond the core governance subsystem.
   - organization:
       name: Bydrec Inc.
       url: "https://bydrec.com"
@@ -218,9 +224,20 @@ work:
         category: Databases
       - name: Apache Camel
         category: Backend
+      - name: Kotlin
+        category: Programming
+      - name: Node.js
+        category: Backend
+      - name: JUnit
+        category: Tools
+      - name: Spock Framework
+        category: Tools
+      - name: JMeter
+        category: Tools
     highlights:
       - Scaled backend video delivery services to support 2M+ concurrent viewers during peak live events, ensuring high availability across a distributed Java/Groovy/Cassandra stack.
       - Engineered internal automation tools to validate business logic for DMAs, A/V pairing, and CMS integration.
+      - Collaborated on shared Kotlin libraries and drove test coverage with JMeter, JUnit, and the Spock Framework.
   - organization:
       name: NativApps S.A.S.
       url: "https://nativapps.com.co"
@@ -260,9 +277,11 @@ work:
         category: Databases
       - name: H3
         category: Programming
+      - name: GeoJSON
+        category: Programming
     highlights:
       - Engineered HIPAA-compliant medical data migrations (SQL Server to MongoDB) using Mirth and Rhino/JS, ensuring high accuracy in HL7 mapping and deduplication.
-      - Developed geolocation and spatial indexing modules using H3 and PostGIS for a delivery application.
+      - Developed geolocation and spatial indexing modules using GeoJSON, H3, and PostGIS for a delivery application.
       - Built a custom VNC layer for Android and a backend MDM (Mobile Device Management) service to track device health and location.
   - organization:
       name: Accendo S.A.S
@@ -288,6 +307,8 @@ work:
         category: Programming
       - name: jQuery
         category: Frontend
+      - name: React
+        category: Frontend
       - name: Spring Framework
         category: Backend
         versions: [4.x]
@@ -299,6 +320,10 @@ work:
         versions: [4.3]
       - name: PostgreSQL
         category: Databases
+      - name: Maven
+        category: Tools
+      - name: Flyway
+        category: Tools
     highlights:
       - Developed custom RFID tag-tracking daemons and inventory management systems across Desktop and Android platforms.
       - Engineered a restaurant management interface in C#/WPF with low-level integrations for kitchen ticket printers and barcode scanners.
@@ -309,7 +334,7 @@ education:
     area: Software Engineering
     studyType: University Degree
     startDate: 2019-01-01
-    endDate: 2023-06-30
+    endDate: 2023-08-31
     location: "Bogotá, Colombia"
 affiliations: null
 awards:
@@ -319,6 +344,12 @@ awards:
     issuer: "Colombia's Ministry of Education"
     url: "https://periodismopublico.com/solo-un-cundinamarques-dentro-de"
 publications: null
+certificates:
+  - name: "Programación de páginas Web con HTML y JavaScript"
+    issuer: "Servicio Nacional De Aprendizaje (SENA)"
+    date: 2010-12-23
+    url: https://sis.senavirtual.edu.co/constancia/SGCV20102985332
+    filename: SGCV20102985332.pdf
 projects:
   - name: IPSY Inc.
     url: "https://ipsy.com/"

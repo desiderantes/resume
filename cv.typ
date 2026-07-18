@@ -246,8 +246,8 @@
 }
 
 // Honors and Awards
-#let cvawards(info) = {
-  if utils.hasvalid(info, "awards") {
+#let cvawards(info, uservars) = {
+  if utils.hasvalid(info, "awards") and uservars.showAwards {
     block(breakable: false)[
       == Honors & Awards
 

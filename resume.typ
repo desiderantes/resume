@@ -18,10 +18,13 @@
   showPostal: false, // Boolean for full address
   showCerts: false, // Boolean for certificates
   showEducationDates: false, // Boolean for showing full start and end date
+  showAwards: false,
   showProjects: false,
   showReferences: true, // Show references
   linkReferences: false, // Some ATS get confused by links and pick up these links instead of my own
   embedYaml: sys.inputs.at("embed_yml", default: "true") == "true",
+  embedDiploma: sys.inputs.at("embed_diploma", default: "true") == "true",
+  embedCertificates: sys.inputs.at("embed_certs", default: "true") == "true",
 )
 
 // setrules and showrules can be overridden by re-declaring it here
@@ -60,17 +63,60 @@
 #cveducation(cvdata, uservars)
 #cvaffiliations(cvdata)
 #cvprojects(cvdata, uservars)
-#cvawards(cvdata)
+#cvawards(cvdata, uservars)
 #cvcertificates(cvdata, uservars)
 #cvpublications(cvdata)
 #cvreferences(cvdata, uservars)
 
 #if uservars.embedYaml {
+  let newcvdata = cvdata
+  if not uservars.showProjects {
+    let _ = newcvdata.remove("projects")
+  }
+  if not uservars.showCerts {
+    let _ = newcvdata.remove("certificates")
+  }
+
+  if not uservars.showAwards {
+    let _ = newcvdata.remove("awards")
+  }
+
+  if not uservars.showPostal {
+    newcvdata.personal.location = utils.removekey(newcvdata.personal.location, "postalCode")
+  }
+
+  if not uservars.showAddress {
+    newcvdata.insert("personal", utils.removekey(newcvdata.personal, "location"))
+  }
+
+  if not uservars.showNumber {
+    newcvdata.insert("personal", utils.removekey(newcvdata.personal, "phone"))
+  }
   pdf.attach(
     "resume.yml",
-    bytes(yaml.encode(if uservars.showProjects {cvdata} else  { utils.removekey(cvdata,"projects")} )),
+    bytes(yaml.encode(newcvdata)),
     relationship: "source",
     mime-type: "text/yaml",
     description: "Raw CV Data in YAML format, with extra info, machine-friendly",
   )
+}
+
+#if uservars.embedDiploma {
+  pdf.attach(
+    "diploma.pdf",
+    relationship: "supplement",
+    mime-type: "application/pdf",
+    description: "Diploma PDF",
+  )
+}
+
+#if uservars.embedCertificates {
+  for cert in cvdata.certificates {
+    pdf.attach(
+      cert.filename,
+      relationship: "supplement",
+      mime-type: "application/pdf",
+      description: cert.name + " by " + cert.issuer,
+    )
+  }
 }
