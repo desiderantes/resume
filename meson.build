@@ -3,6 +3,7 @@ project('resume', version: '0.1.0', meson_version: '>= 1.9.0',)
 typst = find_program('typst', required: true)
 qpdf = find_program('qpdf', required: true)
 jq = find_program('jq', required: true)
+pandoc = find_program('pandoc', required: false)
 
 # Font verification
 fclist = find_program('fc-list', required: false)
@@ -97,7 +98,7 @@ html_args = [
     '@OUTPUT@',
 ].flatten()
 
-custom_target(
+html_target = custom_target(
     'resume_html',
     input: main_typ,
     output: 'resume.html',
@@ -105,3 +106,24 @@ custom_target(
     depend_files: project_sources,
     build_by_default: true,
 )
+
+# Step 4: Convert HTML to GitHub-Flavored Markdown (if pandoc is available)
+if pandoc.found()
+    custom_target(
+        'resume_markdown',
+        input: html_target,
+        output: 'resume.md',
+        command: [
+            pandoc.full_path(),
+            '-f',
+            'html',
+            '-t',
+            'gfm-raw_html',
+            '--wrap=none',
+            '@INPUT@',
+            '-o',
+            '@OUTPUT@',
+        ],
+        build_by_default: true,
+    )
+endif

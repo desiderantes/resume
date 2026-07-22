@@ -68,7 +68,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y meson ninja-build qpdf jq fonts-inter fonts-ibm-plex fontconfig
+          sudo apt-get install -y meson ninja-build qpdf jq pandoc fonts-inter fonts-ibm-plex fontconfig
 
       - name: Install Typst
         run: |
@@ -98,6 +98,7 @@ jobs:
         run: |
           cp build/resume.pdf "resume-${{ steps.date.outputs.date }}.pdf"
           cp build/resume.html "resume-${{ steps.date.outputs.date }}.html"
+          cp build/resume.md "resume-${{ steps.date.outputs.date }}.md"
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
@@ -120,3 +121,4 @@ jobs:
           files: |
             resume-${{ steps.date.outputs.date }}.pdf
             resume-${{ steps.date.outputs.date }}.html
+            resume-${{ steps.date.outputs.date }}.md

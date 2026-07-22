@@ -68,11 +68,13 @@
 #cvpublications(cvdata)
 #cvreferences(cvdata, uservars)
 
-#if uservars.embedYaml {
+#let makeEmbeds(cvdata, uservars) = {
   let newcvdata = cvdata
+
   if not uservars.showProjects {
     let _ = newcvdata.remove("projects")
   }
+
   if not uservars.showCerts {
     let _ = newcvdata.remove("certificates")
   }
@@ -92,31 +94,36 @@
   if not uservars.showNumber {
     newcvdata.insert("personal", utils.removekey(newcvdata.personal, "phone"))
   }
-  pdf.attach(
-    "resume.yml",
-    bytes(yaml.encode(newcvdata)),
-    relationship: "source",
-    mime-type: "text/yaml",
-    description: "Raw CV Data in YAML format, with extra info, machine-friendly",
-  )
-}
 
-#if uservars.embedDiploma {
-  pdf.attach(
-    "diploma.pdf",
-    relationship: "supplement",
-    mime-type: "application/pdf",
-    description: "Diploma PDF",
-  )
-}
-
-#if uservars.embedCertificates {
-  for cert in cvdata.certificates {
+  if uservars.embedYaml {
     pdf.attach(
-      cert.filename,
-      relationship: "supplement",
-      mime-type: "application/pdf",
-      description: cert.name + " by " + cert.issuer,
+      "resume.yml",
+      bytes(yaml.encode(newcvdata)),
+      relationship: "source",
+      mime-type: "text/yaml",
+      description: "Raw CV Data in YAML format, with extra info, machine-friendly",
     )
   }
+
+  if uservars.embedDiploma {
+    pdf.attach(
+      "diploma.pdf",
+      relationship: "supplement",
+      mime-type: "application/pdf",
+      description: "Diploma PDF",
+    )
+  }
+
+  if uservars.embedCertificates {
+    for cert in cvdata.certificates {
+      pdf.attach(
+        cert.filename,
+        relationship: "supplement",
+        mime-type: "application/pdf",
+        description: cert.name + " by " + cert.issuer,
+      )
+    }
+  }
 }
+
+#makeEmbeds(cvdata, uservars)
