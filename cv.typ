@@ -1,6 +1,21 @@
 #import "@preview/based:0.2.0": base64
 #import "utils.typ"
 
+#let lr_line(left, right) = context {
+  if target() == "html" {
+    html.elem(
+      "div",
+      attrs: (style: "display: flex; justify-content: space-between; align-items: baseline; width: 100%;"),
+      [
+        #html.elem("span", left)
+        #if right != [] and right != none [#html.elem("span", right)]
+      ],
+    )
+  } else {
+    [#left #h(1fr) #right]
+  }
+}
+
 // show rules
 #let showrules(uservars, doc) = {
   // Uppercase Section Headings
@@ -87,14 +102,12 @@
         // Create a block layout for each education entry
         block(width: 100%)[
           // Line 1: Institution and Location
-          *#link(edu.url)[#edu.institution]* #h(1fr) *#edu.location* \
+          #lr_line([*#link(edu.url)[#edu.institution]*], [*#edu.location*])
           // Line 2: Degree and Date Range
-          #text(style: "italic")[#edu.studyType in #edu.area] #h(1fr)
-          #{
-            if uservars.showEducationDates == true {
-              [#start #sym.dash.en #end]
-            }
-          }
+          #lr_line(
+            [#text(style: "italic")[#edu.studyType in #edu.area]],
+            if uservars.showEducationDates == true { [#start #sym.dash.en #end] } else { [] }
+          )
           #{
             if utils.hasvalid(edu, "honours") and edu.honours.len() > 0 {
               [- *Honours*: #edu.honours.join(", ")]
@@ -135,17 +148,22 @@
             let org_url = w.organization.at("url", default: none)
             let org_content = if org_url != none { link(org_url)[#org_name] } else { org_name }
 
-            if w.keys().contains("client") {
+            let left_content = if w.keys().contains("client") {
               let client_name = w.client.name
               let client_url = w.client.at("url", default: none)
               let client_content = if client_url != none { link(client_url)[#client_name] } else { client_name }
               [*#client_content via #org_content*]
             } else { [*#org_content*] }
-          } #h(1fr) *#w.location.join("/")* \
+
+            lr_line(left_content, [*#w.location.join("/")*])
+          }
           // Line 2: Degree and Date Range
-          #text(style: "italic")[#w.position] #h(1fr) #start #sym.dash.en #end \[ #(
-            w.modality.map(mode => [ #smallcaps[#mode]]).join(", ")
-          ) \]\
+          #lr_line(
+            [#text(style: "italic")[#w.position]],
+            [#start #sym.dash.en #end \[ #(
+              w.modality.map(mode => [ #smallcaps[#mode]]).join(", ")
+            ) \]]
+          )
           // Highlights or Description
           #for hi in w.highlights [
             - #hi
@@ -178,11 +196,10 @@
               let org_url = org.organization.at("url", default: none)
               if org_url != none { link(org_url)[#org_name] } else { org_name }
             }
-            [*#org_content*]
-          } #h(1fr) *#org.location* \
+            lr_line([*#org_content*], [*#org.location*])
+          }
           // Line 2: Degree and Date Range
-          #text(style: "italic")[#org.position] #h(1fr)
-          #start #sym.dash.en #end \
+          #lr_line([#text(style: "italic")[#org.position]], [#start #sym.dash.en #end])
           // Highlights or Description
           #if utils.hasvalid(org, "highlights") {
             for hi in org.highlights [
@@ -234,7 +251,7 @@
           // Line 1: Institution and Location
           *#link(project.url)[#project.name]* \
           // Line 2: Degree and Date Range
-          #text(style: "italic")[#project.affiliation]  #h(1fr) #start #sym.dash.en #end \
+          #lr_line([#text(style: "italic")[#project.affiliation]], [#start #sym.dash.en #end])
           // Summary or Description
           #for hi in project.highlights [
             - #hi
@@ -258,9 +275,9 @@
         // Create a block layout for each education entry
         block(width: 100%)[
           // Line 1: Institution and Location
-          *#link(award.url)[#award.title]* #h(1fr) *#award.location*\
+          #lr_line([*#link(award.url)[#award.title]*], [*#award.location*])
           // Line 2: Degree and Date Range
-          Issued by #text(style: "italic")[#award.issuer]  #h(1fr) #date \
+          #lr_line([Issued by #text(style: "italic")[#award.issuer]], [#date])
           // Summary or Description
           #if utils.hasvalid(award, "highlights") {
             for hi in award.highlights [
@@ -288,7 +305,7 @@
           // Line 1: Institution and Location
           *#link(cert.url)[#cert.name]* \
           // Line 2: Degree and Date Range
-          Issued by #text(style: "italic")[#cert.issuer]  #h(1fr) #date \
+          #lr_line([Issued by #text(style: "italic")[#cert.issuer]], [#date])
         ]
       }
     ]
@@ -310,7 +327,7 @@
           // Line 1: Institution and Location
           *#link(pub.url)[#pub.name]* \
           // Line 2: Degree and Date Range
-          Published on #text(style: "italic")[#pub.publisher]  #h(1fr) #date \
+          #lr_line([Published on #text(style: "italic")[#pub.publisher]], [#date])
         ]
       }
     ]

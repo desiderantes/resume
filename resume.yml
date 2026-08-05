@@ -44,7 +44,7 @@ work:
     endDate: null
     stack:
       - name: Java
-        versions: [8, 21, 25]
+        versions: [5, 8, 21, 25]
         category: Programming
       - name: Spring Boot
         versions: [3.x, 4.x]
@@ -255,7 +255,7 @@ work:
         versions: [8]
         category: Programming
       - name: Kotlin
-        versions: [1.1, 1.2]
+        versions: [1.2]
         category: Programming
       - name: Spring Boot
         category: Backend
@@ -465,7 +465,7 @@ languages:
   - language: Spanish
     fluency: Native speaker
   - language: English
-    fluency: Proficient (C1)
+    fluency: Proficient (C2)
   - language: Portuguese
     fluency: Intermediate
 interests:
