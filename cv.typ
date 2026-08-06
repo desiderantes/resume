@@ -1,18 +1,18 @@
 #import "@preview/based:0.2.0": base64
 #import "utils.typ"
 
-#let lr_line(left, right) = context {
+#let lr_line(l_content, r_content) = context {
   if target() == "html" {
     html.elem(
       "div",
       attrs: (style: "display: flex; justify-content: space-between; align-items: baseline; width: 100%;"),
       [
-        #html.elem("span", left)
-        #if right != [] and right != none [#html.elem("span", right)]
+        #html.elem("span", l_content)
+        #if r_content != [] and r_content != none [#html.elem("span", r_content)]
       ],
     )
   } else {
-    [#left #h(1fr) #right]
+    [#l_content #h(1fr) #r_content]
   }
 }
 
@@ -102,12 +102,12 @@
         // Create a block layout for each education entry
         block(width: 100%)[
           // Line 1: Institution and Location
-          #lr_line([*#link(edu.url)[#edu.institution]*], [*#edu.location*])
+          #lr_line([*#link(edu.url)[#edu.institution]*], [*#edu.location*]) \
           // Line 2: Degree and Date Range
           #lr_line(
             [#text(style: "italic")[#edu.studyType in #edu.area]],
             if uservars.showEducationDates == true { [#start #sym.dash.en #end] } else { [] }
-          )
+          ) \
           #{
             if utils.hasvalid(edu, "honours") and edu.honours.len() > 0 {
               [- *Honours*: #edu.honours.join(", ")]
@@ -156,14 +156,14 @@
             } else { [*#org_content*] }
 
             lr_line(left_content, [*#w.location.join("/")*])
-          }
+          } \
           // Line 2: Degree and Date Range
           #lr_line(
             [#text(style: "italic")[#w.position]],
             [#start #sym.dash.en #end \[ #(
               w.modality.map(mode => [ #smallcaps[#mode]]).join(", ")
             ) \]]
-          )
+          ) \
           // Highlights or Description
           #for hi in w.highlights [
             - #hi
