@@ -29,6 +29,41 @@ impact:
   - Owned and evolved mission-critical backend systems through iterative delivery and post-launch refactoring, improving reliability, observability, and onboarding ergonomics.
 work:
   - organization:
+      name: Zagalabs
+      url: https://zaga.co
+    contract: outsourcing
+    client:
+      name: Vizient
+      url: https://www.vizient.com/
+    position: Senior Software Developer
+    location:
+      - Rio de Janeiro, Brazil
+    modality:
+      - remote
+    startDate: 2026-09-02
+    endDate: null
+    stack:
+      - name: Java
+        versions: [21]
+        category: Programming
+      - name: Spring Boot
+        versions: ["4.1"]
+        category: Backend
+      - name: PostgreSQL
+        versions: [17]
+        category: Databases
+      - name: Databricks
+        category: BI & Data Analytics
+      - name: Gradle
+        versions: ["9.0"]
+        category: Tools
+      - name: Nx
+        category: Tools
+    highlights:
+      - Architecting and engineering an AI software factory within an enterprise monorepo (Nx, Gradle 9.0, Java 21, Spring Boot 4.1), automating intelligent development and delivery workflows.
+      - Stay tuned!
+    references: []
+  - organization:
       name: Softensity
       url: https://softensity.com
     contract: outsourcing
@@ -41,7 +76,7 @@ work:
     modality:
       - remote
     startDate: 2025-09-02
-    endDate: null
+    endDate: 2025-07-24
     stack:
       - name: Java
         versions: [5, 8, 21, 25]
@@ -68,6 +103,7 @@ work:
       - Orchestrated a cross-functional modernization of a legacy LMS monolith, aligning 5+ engineering teams on a phased transition from Java 5/Struts 1.x to a modular Java 21 and Spring Boot 4 microservices architecture.
       - Engineered custom OpenRewrite and Gradle automation tooling that accelerated JVM modernization, reducing manual migration effort by an estimated 80% and eliminating refactoring errors across legacy Ant/Hibernate/Java codebases.
       - Mentored and sponsored senior engineers on platform engineering, dependency governance, and modern JVM best practices, establishing updated coding standards across the engineering department, reducing technical debt and improving organizational deployment reliability.
+    references: []
   - organization:
       name: Nexton
       url: "https://nextonlabs.com"
@@ -117,6 +153,10 @@ work:
       - Led a technical baseline upgrade from Java 8/Spring Boot 2.0 to Java 21/Spring Boot 3.x across core commerce services, integrating Micrometer for enhanced production observability.
       - Designed and implemented organization-wide Gradle platform conventions, Version Catalogs, and Testcontainers tooling to standardize builds, dependency governance, and local development workflows.
       - Owned core commerce backend systems for 3+ years, driving iterative architecture and post-launch refactoring that improved latency, observability, and onboarding speed in user-facing flows.
+    references:
+      - name: Daniel Jonás Kochian
+        reference: "I had the pleasure of working with Mario, and I can say he is a very solid and reliable engineer with a strong collaborative mindset. He consistently delivered high-quality work, was proactive in problem-solving, and communicated effectively with product and the rest of the team. Beyond his technical skills, I especially value his professionalism and commitment. I would definitely recommend him to any team looking for someone dependable and impactful."
+        url: "https://www.linkedin.com/in/daniel-jonas-kochian/"
   - organization:
       name: EPAM Inc.
       url: "https://epam.com"
@@ -158,6 +198,10 @@ work:
       - Architected an event-driven account-linking service unifying disparate debtor records into single consumer profiles, leveraging Kafka Connect and Quarkus microservices to perform PCI-compliant profile merging and sensitive data scrubbing for 100M+ financial records.
       - Developed custom Kafka Connect connectors to manage Protobuf/Avro schema evolution in sync with centralized schema repositories, ensuring zero data loss during stream processing.
       - Led the implementation of an account-linking service that unified disparate debtor records into single consumer profiles, improving payment recovery rates by ~35%.
+    references:
+      - name: Alejandro Marin
+        reference: "Mario was an integral part of our data migration project, where we utilized Java 11, Quarkus, Kafka, Debezium, and custom Kafka Connect connectors. As my once colleague and direct report, Mario showcased exceptional skills in handling the complexity of migrating a substantial MySQL 5.1 database to PostgreSQL 12 and Snowflake. His expertise, especially in backend development and data migration, was evident in the success of the project. Mario's commitment to delivering high-quality results made him a standout team member, and I highly recommend him for any challenging technical endeavors."
+        url: "https://alejandrome.github.io/"
   - organization:
       name: S4N S.A.S.
       url: "https://s4n.co"
@@ -194,6 +238,7 @@ work:
       - Replatformed the governance subsystem by centralizing data from legacy Oracle 11 silos into a unified Spring Boot source of truth, exposing GraphQL APIs and Kafka streams for real-time event sourcing.
       - Implemented a high-performance historical data tracking system using Hibernate/Envers, customized to reuse existing legacy audit schemas in PostgreSQL.
       - Also delivered backend services for the Warehouse Management group, extending the platform beyond the core governance subsystem.
+    references: []
   - organization:
       name: Bydrec Inc.
       url: "https://bydrec.com"
@@ -238,6 +283,10 @@ work:
       - Scaled backend video delivery services to support 2M+ concurrent viewers during peak live events, ensuring high availability across a distributed Java/Groovy/Cassandra stack.
       - Engineered internal automation tools to validate business logic for DMAs, A/V pairing, and CMS integration.
       - Collaborated on shared Kotlin libraries and drove test coverage with JMeter, JUnit, and the Spock Framework.
+    references:
+      - name: Armando Alonzo
+        reference: "Mario was a key member of our video delivery team during a period of massive growth at the NFL. With his initiative in building the internal tools we needed to validate complex business logic and metadata management, we were able to automate a significant amout of our Alfresco CMS integrations"
+        url: "https://www.linkedin.com/in/armandoalonzo/"
   - organization:
       name: NativApps S.A.S.
       url: "https://nativapps.com.co"
@@ -283,6 +332,10 @@ work:
       - Engineered HIPAA-compliant medical data migrations (SQL Server to MongoDB) using Mirth and Rhino/JS, ensuring high accuracy in HL7 mapping and deduplication.
       - Developed geolocation and spatial indexing modules using GeoJSON, H3, and PostGIS for a delivery application.
       - Built a custom VNC layer for Android and a backend MDM (Mobile Device Management) service to track device health and location.
+    references:
+      - name: José Eduardo Sierra Vargas
+        reference: Mario has been an expert in the JVM ecosystem since our early days together at NativApps, with a strong architectural vision and bringing a great attitude to the team.
+        url: "https://www.linkedin.com/in/jos%C3%A9-eduardo-sierra-vargas-93bb03110/"
   - organization:
       name: Accendo S.A.S
       url: "https://accendo.com.co"
@@ -328,6 +381,7 @@ work:
       - Developed custom RFID tag-tracking daemons and inventory management systems across Desktop and Android platforms.
       - Engineered a restaurant management interface in C#/WPF with low-level integrations for kitchen ticket printers and barcode scanners.
       - Developed backend solutions using Java, Spring, and PostgreSQL, focusing on data migration and industrial hardware integration.
+    references: []
 education:
   - institution: Politécnico Grancolombiano
     url: "https://poligran.edu.co/"
@@ -473,16 +527,5 @@ interests:
   - Open Source
   - Systems Programming
   - JVM
-references:
-  - name: Daniel Jonás Kochian
-    reference: "I had the pleasure of working with Mario, and I can say he is a very solid and reliable engineer with a strong collaborative mindset. He consistently delivered high-quality work, was proactive in problem-solving, and communicated effectively with product and the rest of the team. Beyond his technical skills, I especially value his professionalism and commitment. I would definitely recommend him to any team looking for someone dependable and impactful."
-    url: "https://www.linkedin.com/in/daniel-jonas-kochian/"
-  - name: Alejandro Marin
-    reference: "Mario was an integral part of our data migration project, where we utilized Java 11, Quarkus, Kafka, Debezium, and custom Kafka Connect connectors. As my once colleague and direct report, Mario showcased exceptional skills in handling the complexity of migrating a substantial MySQL 5.1 database to PostgreSQL 12 and Snowflake. His expertise, especially in backend development and data migration, was evident in the success of the project. Mario's commitment to delivering high-quality results made him a standout team member, and I highly recommend him for any challenging technical endeavors."
-    url: "https://alejandrome.github.io/"
-  - name: Armando Alonzo
-    reference: "Mario was a key member of our video delivery team during a period of massive growth at the NFL. With his initiative in building the internal tools we needed to validate complex business logic and metadata management, we were able to automate a significant amout of our Alfresco CMS integrations"
-    url: "https://www.linkedin.com/in/armandoalonzo/"
-  - name: José Eduardo Sierra Vargas
-    reference: Mario has been an expert in the JVM ecosystem since our early days together at NativApps, with a strong architectural vision and bringing a great attitude to the team.
-    url: "https://www.linkedin.com/in/jos%C3%A9-eduardo-sierra-vargas-93bb03110/"
+references: []
+

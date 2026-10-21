@@ -48,6 +48,8 @@
 
 #let removekey(dict, key) = {
   let new-dict = dict
-  let _ = new-dict.remove(key) // Mutates copy and discards the removed value
+  if key in new-dict {
+    let _ = new-dict.remove(key)
+  }
   return new-dict
 }

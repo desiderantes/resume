@@ -1,4 +1,4 @@
-project('resume', version: '0.1.0', meson_version: '>= 1.9.0',)
+project('resume', version: '0.1.0', meson_version: '>= 1.10.0',)
 
 typst = find_program('typst', required: true)
 qpdf = find_program('qpdf', required: true)
@@ -32,6 +32,16 @@ project_sources = ['cv.typ', 'utils.typ', 'resume.yml']
 embed_yml = get_option('embed_yml')
 embed_diploma = get_option('embed_diploma')
 embed_certs = get_option('embed_certs')
+show_references = get_option('show_references')
+show_projects = get_option('show_projects')
+show_awards = get_option('show_awards')
+show_certs = get_option('show_certs')
+show_education_dates = get_option('show_education_dates')
+show_address = get_option('show_address')
+show_number = get_option('show_number')
+show_postal = get_option('show_postal')
+link_references = get_option('link_references')
+max_work_experiences = get_option('max_work_experiences')
 
 # Step 1: Compile the PDF with Typst
 typst_args = [typst, 'compile', '--features', 'html', '@INPUT@', '@OUTPUT@']
@@ -39,6 +49,16 @@ typst_args = [typst, 'compile', '--features', 'html', '@INPUT@', '@OUTPUT@']
 embed_args =  ['--input', 'embed_yml=@0@'.format(embed_yml)]
 embed_args += ['--input', 'embed_diploma=@0@'.format(embed_diploma)]
 embed_args += ['--input', 'embed_certs=@0@'.format(embed_certs)]
+embed_args += ['--input', 'show_references=@0@'.format(show_references)]
+embed_args += ['--input', 'show_projects=@0@'.format(show_projects)]
+embed_args += ['--input', 'show_awards=@0@'.format(show_awards)]
+embed_args += ['--input', 'show_certs=@0@'.format(show_certs)]
+embed_args += ['--input', 'show_education_dates=@0@'.format(show_education_dates)]
+embed_args += ['--input', 'show_address=@0@'.format(show_address)]
+embed_args += ['--input', 'show_number=@0@'.format(show_number)]
+embed_args += ['--input', 'show_postal=@0@'.format(show_postal)]
+embed_args += ['--input', 'link_references=@0@'.format(link_references)]
+embed_args += ['--input', 'max_work_experiences=@0@'.format(max_work_experiences)]
 typst_args += embed_args
 
 pdf_standard = get_option('pdf_standard')

@@ -170,6 +170,22 @@
           ]
         ]
       }
+      #if info.at("omitted_work_count", default: 0) > 0 [
+        #context {
+          if target() == "html" {
+            html.elem("p", attrs: (style: "text-align: center; font-style: italic; color: #646464; font-size: 8.5pt;"), [
+              Older positions have been omitted. For the full version, please check the footer of this document
+            ])
+          } else {
+            v(4pt)
+            align(center)[
+              #text(size: 8.5pt, style: "italic", fill: color.linear-rgb(100, 100, 100, 255))[
+                Older positions have been omitted. For the full version, please check the footer of this document
+              ]
+            ]
+          }
+        }
+      ]
     ]
   }
 }
@@ -415,11 +431,27 @@
 
 // References
 #let cvreferences(info, uservars) = {
-  if (utils.hasvalid(info, "references") and uservars.showReferences) {
+  let refs = if utils.hasvalid(info, "references") and info.references.len() > 0 {
+    info.references
+  } else if utils.hasvalid(info, "work") {
+    let collected = ()
+    for w in info.work {
+      if utils.hasvalid(w, "references") and type(w.references) == array {
+        for ref in w.references {
+          collected.push(ref)
+        }
+      }
+    }
+    collected
+  } else {
+    ()
+  }
+
+  if (refs.len() > 0 and uservars.showReferences) {
     block(breakable: false)[
       == References
 
-      #for ref in info.references [
+      #for ref in refs [
         #if uservars.linkReferences [
           - *#link(ref.url)[#ref.name]*: "#ref.reference"
         ] else [

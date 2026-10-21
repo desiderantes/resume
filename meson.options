@@ -1,0 +1,17 @@
+option('pdf_standard', type: 'combo',
+       choices: ['1.7', '2.0', 'a-1b', 'a-1a', 'a-2b', 'a-2u', 'a-2a', 'a-3b', 'a-3u', 'a-3a', 'a-4', 'a-4f', 'a-4e', 'ua-1', 'none'],
+       value: 'none',
+       description: 'The PDF standard to enforce conformance with')
+option('embed_yml', type: 'boolean', value: true, description: 'Embed resume.yml in the PDF and enable clickable links')
+option('embed_diploma', type: 'boolean', value: true, description: 'Embed diploma.pdf in the PDF')
+option('embed_certs', type: 'boolean', value: false, description: 'Embed certificates in the PDF')
+option('show_references', type: 'boolean', value: true, description: 'Show the work references')
+option('show_projects', type: 'boolean', value: false, description: 'Show projects section')
+option('show_awards', type: 'boolean', value: false, description: 'Show awards section')
+option('show_certs', type: 'boolean', value: false, description: 'Show licenses and certifications section')
+option('show_education_dates', type: 'boolean', value: false, description: 'Show full start and end dates for education')
+option('show_address', type: 'boolean', value: true, description: 'Show address in contact info')
+option('show_number', type: 'boolean', value: false, description: 'Show phone number in contact info')
+option('show_postal', type: 'boolean', value: false, description: 'Show postal code in address')
+option('link_references', type: 'boolean', value: false, description: 'Enable hyperlinks on references (Some ATS havee issues with those links)')
+option('max_work_experiences', type: 'integer', value: 0, min: 0, description: 'Limit displayed work experiences to the latest N entries (0 = show all)')
