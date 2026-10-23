@@ -3,7 +3,7 @@ personal:
   email: desiderantes93@gmail.com
   phone: "+55 (21) 999040893"
   url: "https://desiderantes.com"
-  title: "Lead Backend Engineer"
+  title: "Lead Backend Engineer | JVM Platform Architecture | Distributed Systems"
   location:
     city: Rio de Janeiro
     region: RJ
@@ -17,10 +17,9 @@ personal:
       username: desiderantes
       url: "https://github.com/desiderantes"
 summary: >
-  Backend Architect and JVM Platform Specialist with 10+ years of experience leading high-stakes digital transformations for enterprise clients including Modern Campus, IPSY, NFL, and Nordstrom.
-  Expert in JVM ecosystem evolution (Java 8-25, Kotlin, Scala, Spring Boot 3+), with a focus on event streaming, API design, developer tooling, and large-scale refactoring automation
-  using Gradle and OpenRewrite. Proven track record orchestrating multi-team modernization initiatives and building resilient, observable backend platforms supporting 2M+ concurrent users.
-  Passionate about technical strategy, dependency governance, platform engineering, and mentoring engineers toward higher-leverage delivery.
+  Backend Architect and Lead Engineer with 10+ years of experience modernizing enterprise platforms, evolving JVM ecosystems, and designing resilient distributed systems.
+  Track record orchestrating multi-team migrations (Java 5 to 21+), developing custom OpenRewrite refactoring automation that eliminated ~80% of migration effort,
+  and executing zero-downtime data migrations across 5M+ accounts. Focused on platform engineering, build governance, and building backend services that scale reliably to 2M+ concurrent users.
 impact:
   - Pioneered automated enterprise-wide JVM upgrades (Java 5 to 21+), developing custom rewrite scripts that eliminated manual refactoring overhead across dozens of legacy codebases.
   - Architected zero-downtime user data migrations during corporate acquisitions, ensuring transactional integrity and zero business interruption.
@@ -45,23 +44,22 @@ work:
     stack:
       - name: Java
         versions: [21]
-        category: Programming
+        category: Programming Languages
       - name: Spring Boot
         versions: ["4.1"]
-        category: Backend
+        category: Backend & Architecture
       - name: PostgreSQL
         versions: [17]
-        category: Databases
+        category: Data & Storage
       - name: Databricks
-        category: BI & Data Analytics
+        category: Data & Storage
       - name: Gradle
         versions: ["9.0"]
-        category: Tools
+        category: Developer Platforms & Tooling
       - name: Nx
-        category: Tools
+        category: Developer Platforms & Tooling
     highlights:
-      - Architecting and engineering an AI software factory within an enterprise monorepo (Nx, Gradle 9.0, Java 21, Spring Boot 4.1), automating intelligent development and delivery workflows.
-      - Stay tuned!
+      - Architecting an AI software factory within an enterprise monorepo using Nx, Gradle 9.0, Java 21, and Spring Boot 4.1 to automate development and delivery workflows.
     references: []
   - organization:
       name: Softensity
@@ -76,29 +74,29 @@ work:
     modality:
       - remote
     startDate: 2025-09-02
-    endDate: 2025-07-24
+    endDate: 2026-07-24
     stack:
       - name: Java
         versions: [5, 8, 21, 25]
-        category: Programming
+        category: Programming Languages
       - name: Spring Boot
         versions: [3.x, 4.x]
-        category: Backend
+        category: Backend & Architecture
       - name: Spring Framework
         versions: [2.5, 7]
-        category: Backend
+        category: Backend & Architecture
       - name: Hibernate
         versions: [3, 7]
-        category: Backend
+        category: Backend & Architecture
       - name: Gradle
-        category: Tools
+        category: Developer Platforms & Tooling
       - name: OpenRewrite
-        category: Tools
+        category: Developer Platforms & Tooling
       - name: Ant
-        category: Tools
+        category: Developer Platforms & Tooling
       - name: Struts
         versions: [1.x]
-        category: Backend
+        category: Backend & Architecture
     highlights:
       - Orchestrated a cross-functional modernization of a legacy LMS monolith, aligning 5+ engineering teams on a phased transition from Java 5/Struts 1.x to a modular Java 21 and Spring Boot 4 microservices architecture.
       - Engineered custom OpenRewrite and Gradle automation tooling that accelerated JVM modernization, reducing manual migration effort by an estimated 80% and eliminating refactoring errors across legacy Ant/Hibernate/Java codebases.
@@ -122,31 +120,31 @@ work:
     stack:
       - name: Java
         versions: [8, 17, 21]
-        category: Programming
+        category: Programming Languages
       - name: Kotlin
         versions: [1.8]
-        category: Programming
+        category: Programming Languages
       - name: Scala
-        category: Programming
+        category: Programming Languages
       - name: Spring Boot
         versions: [2.x, 3.x]
-        category: Backend
+        category: Backend & Architecture
       - name: PostgreSQL
-        category: Databases
+        category: Data & Storage
         versions: [12, 16]
       - name: Apache Spark
-        category: BI & Data Analytics
+        category: Data & Storage
       - name: Databricks
-        category: BI & Data Analytics
+        category: Data & Storage
       - name: Testcontainers
-        category: Tools
+        category: Developer Platforms & Tooling
       - name: Gradle
         versions: [4, 8]
-        category: Tools
+        category: Developer Platforms & Tooling
       - name: Micrometer
-        category: Backend
+        category: Backend & Architecture
       - name: Redis
-        category: Databases
+        category: Data & Storage
         versions: [4, 7]
     highlights:
       - Architected and executed a zero-downtime migration strategy during an enterprise merger, safely transitioning 5M+ active and legacy customer accounts with zero data loss, leveraging Scala on Databricks/Spark to migrate legacy MySQL data to PostgreSQL.
@@ -174,30 +172,29 @@ work:
     stack:
       - name: Kotlin
         versions: [1.5, 1.6]
-        category: Programming
+        category: Programming Languages
       - name: Java
         versions: [11]
-        category: Programming
+        category: Programming Languages
       - name: Quarkus
-        category: Backend
+        category: Backend & Architecture
       - name: Kafka
-        category: Backend
+        category: Backend & Architecture
       - name: Debezium
-        category: Backend
+        category: Backend & Architecture
       - name: PostgreSQL
-        category: Databases
+        category: Data & Storage
         versions: [12]
       - name: MySQL
         versions: [5]
-        category: Databases
+        category: Data & Storage
       - name: Snowflake
-        category: Databases
+        category: Data & Storage
       - name: Redis
-        category: Databases
+        category: Data & Storage
     highlights:
-      - Architected an event-driven account-linking service unifying disparate debtor records into single consumer profiles, leveraging Kafka Connect and Quarkus microservices to perform PCI-compliant profile merging and sensitive data scrubbing for 100M+ financial records.
+      - Architected and led the implementation of an event-driven account-linking service using Quarkus and Kafka Connect to unify disparate debtor records into single consumer profiles across 100M+ financial records, executing PCI-compliant profile merging and sensitive data scrubbing while improving payment recovery rates by ~35%.
       - Developed custom Kafka Connect connectors to manage Protobuf/Avro schema evolution in sync with centralized schema repositories, ensuring zero data loss during stream processing.
-      - Led the implementation of an account-linking service that unified disparate debtor records into single consumer profiles, improving payment recovery rates by ~35%.
     references:
       - name: Alejandro Marin
         reference: "Mario was an integral part of our data migration project, where we utilized Java 11, Quarkus, Kafka, Debezium, and custom Kafka Connect connectors. As my once colleague and direct report, Mario showcased exceptional skills in handling the complexity of migrating a substantial MySQL 5.1 database to PostgreSQL 12 and Snowflake. His expertise, especially in backend development and data migration, was evident in the success of the project. Mario's commitment to delivering high-quality results made him a standout team member, and I highly recommend him for any challenging technical endeavors."
@@ -219,21 +216,21 @@ work:
     stack:
       - name: Java
         versions: [11]
-        category: Programming
+        category: Programming Languages
       - name: Spring Boot
-        category: Backend
+        category: Backend & Architecture
       - name: Hibernate
-        category: Backend
+        category: Backend & Architecture
         versions: [5.4]
       - name: PostgreSQL
-        category: Databases
+        category: Data & Storage
       - name: GraphQL
-        category: Backend
+        category: Backend & Architecture
       - name: Kafka
-        category: Backend
+        category: Backend & Architecture
       - name: Oracle
         versions: [11c]
-        category: Databases
+        category: Data & Storage
     highlights:
       - Replatformed the governance subsystem by centralizing data from legacy Oracle 11 silos into a unified Spring Boot source of truth, exposing GraphQL APIs and Kafka streams for real-time event sourcing.
       - Implemented a high-performance historical data tracking system using Hibernate/Envers, customized to reuse existing legacy audit schemas in PostgreSQL.
@@ -256,29 +253,29 @@ work:
     stack:
       - name: Java
         versions: [8]
-        category: Programming
+        category: Programming Languages
       - name: Groovy
-        category: Programming
+        category: Programming Languages
       - name: Spring Boot
-        category: Backend
+        category: Backend & Architecture
         versions: [2.0, 2.1]
       - name: Spring Framework
-        category: Backend
+        category: Backend & Architecture
         versions: [5.0]
       - name: Cassandra
-        category: Databases
+        category: Data & Storage
       - name: Apache Camel
-        category: Backend
+        category: Backend & Architecture
       - name: Kotlin
-        category: Programming
+        category: Programming Languages
       - name: Node.js
-        category: Backend
+        category: Backend & Architecture
       - name: JUnit
-        category: Tools
+        category: Developer Platforms & Tooling
       - name: Spock Framework
-        category: Tools
+        category: Developer Platforms & Tooling
       - name: JMeter
-        category: Tools
+        category: Developer Platforms & Tooling
     highlights:
       - Scaled backend video delivery services to support 2M+ concurrent viewers during peak live events, ensuring high availability across a distributed Java/Groovy/Cassandra stack.
       - Engineered internal automation tools to validate business logic for DMAs, A/V pairing, and CMS integration.
@@ -302,32 +299,32 @@ work:
     stack:
       - name: Java
         versions: [8]
-        category: Programming
+        category: Programming Languages
       - name: Kotlin
         versions: [1.2]
-        category: Programming
+        category: Programming Languages
       - name: Spring Boot
-        category: Backend
+        category: Backend & Architecture
         versions: [1.5]
       - name: Spring Framework
-        category: Backend
+        category: Backend & Architecture
         versions: [4.3]
       - name: Mirth
-        category: Tools
+        category: Developer Platforms & Tooling
       - name: jOOQ
-        category: Backend
+        category: Backend & Architecture
       - name: PostgreSQL
-        category: Databases
+        category: Data & Storage
       - name: MongoDB
-        category: Databases
+        category: Data & Storage
       - name: SQL Server
-        category: Databases
+        category: Data & Storage
       - name: PostGIS
-        category: Databases
+        category: Data & Storage
       - name: H3
-        category: Programming
+        category: Programming Languages
       - name: GeoJSON
-        category: Programming
+        category: Programming Languages
     highlights:
       - Engineered HIPAA-compliant medical data migrations (SQL Server to MongoDB) using Mirth and Rhino/JS, ensuring high accuracy in HL7 mapping and deduplication.
       - Developed geolocation and spatial indexing modules using GeoJSON, H3, and PostGIS for a delivery application.
@@ -350,33 +347,33 @@ work:
     stack:
       - name: Java
         versions: [8]
-        category: Programming
+        category: Programming Languages
       - name: Vala
-        category: Programming
+        category: Programming Languages
       - name: GTK+
         versions: [3]
-        category: Programming
+        category: Programming Languages
       - name: C#
-        category: Programming
+        category: Programming Languages
       - name: jQuery
         category: Frontend
       - name: React
         category: Frontend
       - name: Spring Framework
-        category: Backend
+        category: Backend & Architecture
         versions: [4.x]
       - name: Spring Boot
-        category: Backend
+        category: Backend & Architecture
         versions: [1.x]
       - name: Hibernate
-        category: Backend
+        category: Backend & Architecture
         versions: [4.3]
       - name: PostgreSQL
-        category: Databases
+        category: Data & Storage
       - name: Maven
-        category: Tools
+        category: Developer Platforms & Tooling
       - name: Flyway
-        category: Tools
+        category: Developer Platforms & Tooling
     highlights:
       - Developed custom RFID tag-tracking daemons and inventory management systems across Desktop and Android platforms.
       - Engineered a restaurant management interface in C#/WPF with low-level integrations for kitchen ticket printers and barcode scanners.

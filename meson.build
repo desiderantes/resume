@@ -33,6 +33,7 @@ embed_yml = get_option('embed_yml')
 embed_diploma = get_option('embed_diploma')
 embed_certs = get_option('embed_certs')
 show_references = get_option('show_references')
+show_impact = get_option('show_impact')
 show_projects = get_option('show_projects')
 show_awards = get_option('show_awards')
 show_certs = get_option('show_certs')
@@ -50,6 +51,7 @@ embed_args =  ['--input', 'embed_yml=@0@'.format(embed_yml)]
 embed_args += ['--input', 'embed_diploma=@0@'.format(embed_diploma)]
 embed_args += ['--input', 'embed_certs=@0@'.format(embed_certs)]
 embed_args += ['--input', 'show_references=@0@'.format(show_references)]
+embed_args += ['--input', 'show_impact=@0@'.format(show_impact)]
 embed_args += ['--input', 'show_projects=@0@'.format(show_projects)]
 embed_args += ['--input', 'show_awards=@0@'.format(show_awards)]
 embed_args += ['--input', 'show_certs=@0@'.format(show_certs)]

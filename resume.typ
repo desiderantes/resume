@@ -35,6 +35,7 @@
   showEducationDates: sys.inputs.at("show_education_dates", default: "false") == "true",
   showAwards: sys.inputs.at("show_awards", default: "false") == "true",
   showProjects: sys.inputs.at("show_projects", default: "false") == "true",
+  showImpact: sys.inputs.at("show_impact", default: "false") == "true",
   showReferences: sys.inputs.at("show_references", default: "true") == "true",
   linkReferences: sys.inputs.at("link_references", default: "false") == "true",
   embedYaml: sys.inputs.at("embed_yml", default: "true") == "true",
@@ -95,7 +96,9 @@
 #cvheading(visible_cvdata, uservars)
 
 #cvsummary(visible_cvdata)
-#cvimpact(visible_cvdata)
+#if uservars.showImpact {
+  cvimpact(visible_cvdata)
+}
 #cvskills(visible_cvdata)
 #cvwork(visible_cvdata)
 #cveducation(visible_cvdata, uservars)

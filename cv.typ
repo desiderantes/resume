@@ -76,17 +76,17 @@
   // #set par(justify: false)
   #set text(font: uservars.bodyfont.name, weight: uservars.bodyfont.weight, size: uservars.bodyfont.size * 1)
   #pad(x: 0em)[
-    #profiles.join([#sym.space.nobreak.narrow #sym.diamond.filled #sym.space.nobreak.narrow])
+    #profiles.join([ #sym.space.nobreak.narrow #sym.bullet #sym.space.nobreak.narrow ])
   ]
 ]
 
 // Create layout of the title + contact info
 #let cvheading(info, uservars) = {
-  align(center)[
+  block(width: 100%)[
+    #set align(left)
     = #info.personal.name
     #addresstext(info, uservars)
     #contacttext(info, uservars)
-    // #v(0.5em)
   ]
 }
 
@@ -101,12 +101,15 @@
         let end = utils.strpdate(edu.endDate)
         // Create a block layout for each education entry
         block(width: 100%)[
-          // Line 1: Institution and Location
-          #lr_line([*#link(edu.url)[#edu.institution]*], [*#edu.location*]) \
-          // Line 2: Degree and Date Range
+          // Line 1: Institution and Date Range
+          #lr_line(
+            [*#link(edu.url)[#edu.institution]*],
+            if uservars.showEducationDates == true { [*#start #sym.dash.en #end*] } else { [] }
+          ) \
+          // Line 2: Degree and Location
           #lr_line(
             [#text(style: "italic")[#edu.studyType in #edu.area]],
-            if uservars.showEducationDates == true { [#start #sym.dash.en #end] } else { [] }
+            [#edu.location]
           ) \
           #{
             if utils.hasvalid(edu, "honours") and edu.honours.len() > 0 {
@@ -142,7 +145,7 @@
 
         // Create a block layout for each education entry
         block(width: 100%, breakable: false)[
-          // Line 1: Company and Location
+          // Line 1: Company and Date Range
           #{
             let org_name = w.organization.name
             let org_url = w.organization.at("url", default: none)
@@ -155,15 +158,25 @@
               [*#client_content via #org_content*]
             } else { [*#org_content*] }
 
-            lr_line(left_content, [*#w.location.join("/")*])
+            let date_content = [*#start #sym.dash.en #end*]
+
+            lr_line(left_content, date_content)
           } \
-          // Line 2: Degree and Date Range
-          #lr_line(
-            [#text(style: "italic")[#w.position]],
-            [#start #sym.dash.en #end \[ #(
-              w.modality.map(mode => [ #smallcaps[#mode]]).join(", ")
-            ) \]]
-          ) \
+          // Line 2: Position and Location / Modality
+          #{
+            let loc_parts = ()
+            if utils.hasvalid(w, "location") and w.location.len() > 0 {
+              loc_parts.push(w.location.join("/"))
+            }
+            if utils.hasvalid(w, "modality") and w.modality.len() > 0 {
+              loc_parts.push(w.modality.map(mode => [ #smallcaps[#mode]]).join(", "))
+            }
+            let right_content = if loc_parts.len() > 0 {
+              [#loc_parts.join([ #sym.space.nobreak.narrow #sym.bullet #sym.space.nobreak.narrow ])]
+            } else { [] }
+
+            lr_line([#text(style: "italic")[#w.position]], right_content)
+          } \
           // Highlights or Description
           #for hi in w.highlights [
             - #hi
@@ -354,15 +367,8 @@
 #let cvskills(info) = {
   if (utils.hasvalid(info, "languages")) or (utils.hasvalid(info, "work")) or (utils.hasvalid(info, "interests")) {
     block(breakable: false)[
-      == Skills, Languages, Interests
+      == Technical Skills
 
-      #if (utils.hasvalid(info, "languages")) [
-        #let langs = ()
-        #for lang in info.languages {
-          langs.push([#lang.language (#lang.fluency)])
-        }
-        - *Languages*: #langs.join(", ")
-      ]
       #if (utils.hasvalid(info, "work")) [
         #let skill_map = (:) // category -> (tech_name -> (version_list))
 
@@ -391,11 +397,8 @@
         }
 
         // Define a preferred order for categories
-        #let category_order = ("Programming", "Backend", "Tools", "BI & Data Analytics")
+        #let category_order = ("Programming Languages", "Backend & Architecture", "Developer Platforms & Tooling", "Data & Storage")
         #let existing_cats = category_order + skill_map.keys().filter(it => it not in category_order)
-
-
-
 
         // Render ordered categories first, then any others found
         #for cat in existing_cats {
@@ -421,6 +424,13 @@
             [- *#cat*: #formatted_list.join(", ")]
           }
         }
+      ]
+      #if (utils.hasvalid(info, "languages")) [
+        #let langs = ()
+        #for lang in info.languages {
+          langs.push([#lang.language (#lang.fluency)])
+        }
+        - *Spoken Languages*: #langs.join(", ")
       ]
       #if (utils.hasvalid(info, "interests")) [
         - *Interests*: #info.interests.join(", ")
